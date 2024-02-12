@@ -68,6 +68,10 @@
 }
 \makeatother
 
+\DeclareMathOperator{\Ob}{Ob}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Set}{Set}
+
 \title{Теорія категорії \\ І курс магістратура, 2 семестр}
     	
 \begin{document}
@@ -75,7 +79,39 @@
 \newpage
 \tableofcontents
 \newpage
+%Section 1
+%\section{Категорії}
+\subsection{Основні означення}
 \begin{definition}
-Нуль означення.
+\textbf{Категорія} $C$ складається з наступних компонент:
+\begin{itemize}[nosep, wide=0pt, label={--}]
+\item із набору \textbf{об'єктів}; об'єкти позначають за $X,Y,Z,\dots$, а набір позначають за $\Ob(C)$;
+\item із набору \textbf{морфізмів}; морфізми позначають за $f,g,h,\dots$, а набір позначають за  $\Hom(C)$;
+\item кожний морфізм має \textbf{область визначення} та \textbf{область значень}; позначається зазвичай як $f \colon X \to Y$, де об'єкт $X$ -- область визначення, об'єкт $Y$ -- область значень;
+\item кожний об'єкт $X$ має \textbf{тотожний морфізм} $1_X \colon X \to X$;
+\item для кожних морфізмів $f \colon X \to Y,\ g \colon Y \to Z$ існуватиме \textbf{композиція морфізмів} $g \circ f \colon X \to Z$.
+\end{itemize}
+При цьому всьому зобов'язані виконуватися такі аксіоми:
+\begin{center}
+\begin{enumerate}[nosep,wide=0pt,label={\arabic*)}]
+\item для всіх морфізмів $f \colon X \to Y$ виконано $1_Y \circ f = f \circ 1_X = f$;
+\item для кожних трьох морфізмів $f \colon W \to X, g \colon X \to Y, h \colon Y \to Z$ виконується асоціативність композиції, тобто $f \circ (g \circ h) = (f \circ g) \circ h$.
+\end{enumerate}
+\end{center}
 \end{definition}
+
+\begin{example}
+Розглянемо $\Set$ -- це буде категорія, яка складається з наступного:
+\begin{itemize}[nosep, wide=0pt, label={--}]
+\item $\Ob(\Set)$ -- набір всіх множин;
+\item $\Hom(\Set)$ -- набір всіх відображень;
+\item тотожне відображення $1_X \colon X \to X$ задається як $x \mapsto x$;
+\item композиція між $f \colon X \to Y$ та $g \colon Y \to Z$ задається $g \circ f$ таким чином: $x \mapsto f(x) \mapsto g(f(x))$.
+\end{itemize}
+Ясно, що всі ці дві аксіоми виконані.
+\bigskip \\
+Важливо, що $\Ob(\Set)$ -- це саме \underline{набір} всіх множин, а не множина всіх множин. Тому що парадокс Рассела стверджує, що не існує множини, елементи яких будуть множинами.\\
+До речі, $\Set(X,Y)$ -- набір всіх відображень $f \colon X \to Y$ -- буде, насправді, \underline{множиною}. Відображення між двома множинами -- це просто підмножина декартового добутку $X \times Y$. Коли ми беремо дві довільні множини $X,Y$, то звідси $X \times Y$ теж буде множиною.
+\end{example}
+
 \end{document}
