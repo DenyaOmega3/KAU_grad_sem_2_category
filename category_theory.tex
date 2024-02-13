@@ -77,8 +77,8 @@
 \begin{document}
 \maketitle
 \newpage
-\tableofcontents
-\newpage
+%\tableofcontents
+%\newpage
 %Section 1
 %\section{Категорії}
 \subsection{Основні означення}
@@ -100,6 +100,10 @@
 \end{center}
 \end{definition}
 
+\begin{remark}
+Морфізми ще часто називають \textbf{стрілочками}.
+\end{remark}
+
 \begin{example}
 Розглянемо $\Set$ -- це буде категорія, яка складається з наступного:
 \begin{itemize}[nosep, wide=0pt, label={--}]
@@ -113,5 +117,24 @@
 Важливо, що $\Ob(\Set)$ -- це саме \underline{набір} всіх множин, а не множина всіх множин. Тому що парадокс Рассела стверджує, що не існує множини, елементи яких будуть множинами.\\
 До речі, $\Set(X,Y)$ -- набір всіх відображень $f \colon X \to Y$ -- буде, насправді, \underline{множиною}. Відображення між двома множинами -- це просто підмножина декартового добутку $X \times Y$. Коли ми беремо дві довільні множини $X,Y$, то звідси $X \times Y$ теж буде множиною.
 \end{example}
+
+\begin{definition}
+Категорія $M$, що складається з одного об'єкту, називається \textbf{моноїдом}.
+\end{definition}
+
+\begin{definition}
+Задано $C$ -- категорія.\\
+Стрілочка $f \colon X \to Y$ називається \textbf{ізоморфізмом}, якщо існує стрілка $g \colon Y \to X$, для якої
+\begin{align*}
+f \circ g = 1_Y \qquad g \circ f = 1_X
+\end{align*}
+У свою чергу об'єкти $X,Y$ даної категорії називаються \textbf{ізоморфними}.\\
+Позначення: $X \cong Y$.
+\end{definition}
+
+\begin{definition}
+\textbf{Ендоморфізмом} назвемо стрілочку $f \colon X \to X$. Тобто це стрілка між двома однаковими об'єктами.\\
+\textbf{Автоморфізмом} назвемо ізоморфім $f$, який є ендоморфізмом.
+\end{definition}
 
 \end{document}
