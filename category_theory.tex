@@ -137,4 +137,28 @@ f \circ g = 1_Y \qquad g \circ f = 1_X
 \textbf{Автоморфізмом} назвемо ізоморфім $f$, який є ендоморфізмом.
 \end{definition}
 
+\begin{definition}
+Категорія $C$ називається \textbf{дискретною}, якщо
+\begin{align*}
+C(A,B) = \begin{cases} \emptyset, & A \neq B \\ \{1_A\}, & A = B \end{cases}
+\end{align*}
+Тобто існують лише стрілки $A \to A$, і тільки тотожні.
+\end{definition}
+
+\begin{definition}
+Категорія $D$ називається \textbf{підкатегорією} $C$, якщо
+\begin{align*}
+\text{набір об'єктів $D$ міститься в наборі об'єктів $C$} \\
+\text{набір стрілок $A \to B$ в $D$ міститься в наборі стрілок $A \to B$ в $C$ для довільних об'єктів $A,B$ із $D$} \\
+\text{композиція двох морфізмів в $D$ задається так само, як і в $C$}
+\end{align*}
+\end{definition}
+
+\begin{definition}
+Підкатегорія $D$ категорії $C$ називається \textbf{повною}, якщо
+\begin{align*}
+\text{набір стрілок $A,B$ в $D$ збігається з набором стрілок $A,B$ в $C$, для довільних об'єктів $A,B$ із $D$}
+\end{align*}
+\end{definition}
+
 \end{document}
