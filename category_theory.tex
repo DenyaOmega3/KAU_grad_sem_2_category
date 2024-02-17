@@ -233,4 +233,20 @@ $\alpha \beta_1(g) = \alpha (g) \overset{g \in \ker \alpha}{=} e = \alpha(e) = \
 (\text{Rng}). Таке саме доведення.
 \end{proof}
 
+\subsubsection{Розщеплений монік}
+\begin{definition}
+Задано $C$ -- категорія.\\
+Морфізм $\alpha \colon X \to Y$ називається \textbf{розщепленим моніком}, якщо
+\begin{align*}
+\exists \beta \colon y \to x: \beta \alpha = 1_x
+\end{align*}
+Морфізм -- розщеплений монік, тобто даний морфізм має лівий оборотний.
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+x \ar[looseness=4, out=150, in=240, swap, "1_x"] \arrow[r, shift right, "\alpha" {yshift=-10pt}] & y \arrow[l, shift right, dashed, "\exists \beta" {yshift = 10pt}]
+\end{tikzcd}
+\end{figure}
+\end{definition}
+
 \end{document}
