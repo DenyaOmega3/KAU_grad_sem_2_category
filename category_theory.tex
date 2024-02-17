@@ -213,4 +213,24 @@ z \arrow[r, shift left, "\beta_2"] \arrow[r, shift right, "\beta_1" {yshift=-10p
 Отже, $\beta_1(b) - \beta_2(b) = \dfrac{1}{2s} \notin \mathbb{Z}$, а тому звідси $\alpha \beta_1 \neq \alpha \beta_2$.
 \end{example}
 
+\begin{theorem}
+У категоріях $\text{Set},\text{Top},\text{Grp},\text{Rng}$ морфізм ін'єктивний $\iff$ морфізм -- монік.
+\end{theorem}
+
+\begin{proof}
+Ми вже знаємо, що ін'єктивний морфізм -- монік. Залишилося довести зворотний бік для цих категоріях.
+\bigskip \\
+(\text{Set}). Нехай $\alpha \colon X \to Y$ -- монік морфізм. Оберемо $x_1,x_2 \in X$ та припустимо, що $\alpha(x_1) = \alpha(x_2)$. Покладемо $z = 0 \in \mathbb{Z}$ та покладемо $Z = \{z\}$ (хоча тут може бути будь-який сінглтон), визначимо $\beta_1, \beta_2 \colon Z \to X$ як $\beta_1(z) = x_1, \beta_2(z) = x_2$. Тоді\\
+$\alpha \beta_1(z) = \alpha(\beta_1(z)) = \alpha(x_1) = \alpha(x_2) = \alpha(\beta_2(z)) = \alpha \beta_2(z)$.\\
+За монічністю, звідси $\beta_1 = \beta_2$, тобто $x_1 = \beta_1(z) = \beta_2(z) = x_2$. Таким чином, $\alpha$ -- ін'єктивний.
+\bigskip \\
+(\text{Top}). Насправді, все аналогічно, тільки є деякі зауваження. На множину $Z$ треба задати дискретну топологію (єдина можлива топологія для неї). Відображення $\beta_1,\beta_2$ будуть уже неперервними через дискретність $Z$.
+\bigskip \\
+(\text{Grp}). Нехай $\alpha \colon G \to H$ -- монік морфізм. Розглянемо $\beta_1, \beta_2 \colon \ker \alpha \to G$ -- перший буде вкладенням, другий буде тривіальним. Тоді $\alpha \beta_1 = \alpha \beta_2$. Дійсно,\\
+$\alpha \beta_1(g) = \alpha (g) \overset{g \in \ker \alpha}{=} e = \alpha(e) = \alpha \beta_2(g)$.\\
+За монічністю, звідси $\beta_1 = \beta_2$, тобто $\beta_1$ -- тривіальне вкладення. Отже, $\ker \alpha = \{e\}$, а це означає ін'єктивніть $\alpha$.
+\bigskip \\
+(\text{Rng}). Таке саме доведення.
+\end{proof}
+
 \end{document}
