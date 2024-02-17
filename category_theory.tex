@@ -267,4 +267,20 @@ $\beta_1 = 1_x \beta_1 = \beta \alpha \beta_1 = \beta \alpha \beta_2 = 1_x \beta
 $x_1 = 1_X (x_1) = \beta \alpha(x_1) = \beta(\alpha(x_1)) = \beta(\alpha(x_2)) = \beta \alpha(x_2) = 1_X(x_2) = x_2$.
 \end{proof}
 
+\begin{remark}
+Зворотне твердження не працює.
+\end{remark}
+
+\begin{example}
+Розглянемо категорію $\text{Grp}$. Вкладення $\alpha \colon 2 \mathbb{Z} \to \mathbb{Z}$ -- ін'єктивний гомоморфізм. Але це не буде розщепленим моніком.\\
+!Припустимо, що все ж таки він розщеплений монік, тобто існує гомоморфізм $\beta \colon \mathbb{Z} \to 2 \mathbb{Z}$, для якого $\beta \alpha = 1_{2 \mathbb{Z}}$. Тоді $2 \beta(1) = \beta(2) = \beta(\alpha(2)) = \beta \alpha(2) = 2$, тобто $\beta(1) = 1$, але це суперечність! Просто тому що $\beta$ відображає на $2 \mathbb{Z}$.
+\bigskip \\
+Можна аналогічні міркування провести для категорії $\text{Rng}$.
+\end{example}
+
+\begin{example}
+Розглянемо категорію $\text{Top}$. Оберемо тотожне відображення $\alpha \colon \mathbb{R} \to \mathbb{R}$, де область визначення має дискретну топологія, а область значень -- стандартну. Тоді $\alpha$ -- ін'єктивний, але не розщеплений монік.\\
+!Припустимо, що існує морфізм $\beta \colon \mathbb{R} \to \mathbb{R}$, для якого $\beta \alpha = 1_\mathbb{R}$. Тоді $\beta = \beta 1_{\mathbb{R}} = \beta \alpha = 1_{\mathbb{R}}$, однак множина $\{0\}$ відкрита в $\mathbb{R}$ з дискретною топологією, але не відкрита в стандартній топології. Це суперечність! Тому що $\beta$ -- неперервне відображення.
+\end{example}
+
 \end{document}
