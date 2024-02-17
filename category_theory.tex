@@ -283,4 +283,18 @@ $x_1 = 1_X (x_1) = \beta \alpha(x_1) = \beta(\alpha(x_1)) = \beta(\alpha(x_2)) =
 !Припустимо, що існує морфізм $\beta \colon \mathbb{R} \to \mathbb{R}$, для якого $\beta \alpha = 1_\mathbb{R}$. Тоді $\beta = \beta 1_{\mathbb{R}} = \beta \alpha = 1_{\mathbb{R}}$, однак множина $\{0\}$ відкрита в $\mathbb{R}$ з дискретною топологією, але не відкрита в стандартній топології. Це суперечність! Тому що $\beta$ -- неперервне відображення.
 \end{example}
 
+\begin{theorem}
+Задано $\alpha \colon X \to Y$ -- морфізм в категорії $\text{Set}$.\\
+$\alpha$ -- розщеплений монік $\iff \begin{cases} \alpha \text{ -- ін'єктивний} \\ X = \emptyset \implies Y = \emptyset \end{cases}$.
+\end{theorem}
+
+\begin{proof}
+\rightproof Дано: $\alpha$ -- розщеплений монік. Оскільки $\text{Set}$ -- конкретна категорія, то звідси $\alpha$ -- ін'єктивний.\\
+Тепер нехай $X = \emptyset$. Тоді за умовою, існує $\beta \colon Y \to X$, для якого $\beta \alpha = 1_X = 1_\emptyset$. Тоді оскільки $\beta$ -- функція, то $Y = \emptyset$.
+\bigskip \\
+\leftproof Дано: $\alpha$ -- ін'єктивний та $X = \emptyset \implies Y = \emptyset$.\\
+Нехай $X \neq \emptyset$, тобто існує елемент $x_0 \in X$. Оскільки $\alpha$ -- ін'єктивний, то $\alpha|_{\Im \alpha} \colon X \to \Im \alpha$ буде задавати бієкцію, тож для кожного $y \in \Im \alpha$ існує єдиний елемент $\beta(y) \in X$, для якого $\alpha(\beta(y)) = y$. Це визначає функцію $\beta \colon \Im \alpha \to X$, що розширюється до функції $\beta \colon Y \to X$, якщо покласти $\beta(y) = x_0, y \notin \Im \alpha$. Для $x \in X$ ми маємо $\beta \alpha(x) = \beta(\alpha(x)) = x = 1_X(x)$.\\
+Нехай $X = \emptyset$, тоді $Y = \emptyset$ та порожня функція $\beta \colon Y \to X$ задовольняє $\beta \alpha = 1_X$.
+\end{proof}
+
 \end{document}
