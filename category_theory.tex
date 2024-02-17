@@ -20,6 +20,7 @@
 
 \usetikzlibrary{spy}
 \usetikzlibrary{fit,matrix}
+\usetikzlibrary{babel}
 
 \def\rightproof{$\boxed{\Rightarrow}$ }
 
@@ -118,9 +119,24 @@
 До речі, $\Set(X,Y)$ -- набір всіх відображень $f \colon X \to Y$ -- буде, насправді, \underline{множиною}. Відображення між двома множинами -- це просто підмножина декартового добутку $X \times Y$. Коли ми беремо дві довільні множини $X,Y$, то звідси $X \times Y$ теж буде множиною.
 \end{example}
 
-\begin{definition}
-Категорія $M$, що складається з одного об'єкту, називається \textbf{моноїдом}.
-\end{definition}
+\begin{example}
+Розглянемо стисло ще приклади категорій:
+\begin{enumerate}[nosep,wide=0pt,label={\arabic*)}]
+\item $\text{Grp}$ -- об'єктами будуть групи; стрілками будуть гомоморфізми груп;
+\item $\text{Ring}$ -- об'єктами будуть кільця; стрілками будуть гомоморфізмами кілець;
+\item $\text{Top}$ -- об'єктами будуть топологічні простори; стрілочками будуть неперервні відображення;
+\item $\text{Man}$ -- об'єктами будуть гладкі многовиди; стрілочками будуть гладкі відображення.
+\end{enumerate}
+\end{example}
+
+\begin{example}
+Розглянемо моноїд $M$. Ми можемо утворити категорію $\mathcal{M}$, яка містить єдиний об'єкт -- це моноїд.
+\end{example}
+
+\begin{example}
+Розглянемо так званий посет $(P,\prec)$ (partially ordered set). Скажемо, що $\Ob(P) = P$ та $P(i,j)$ -- це будуть тільки ті стрілки, для яких $i \prec j$. Композиція тут існує, оскільки $\prec$ є транзитивним відношенням. Також існує тотожне відображення, оскільки $\prec$ є рефлексивним відношенням.\\
+\textit{Навіть не обов'язково тут вимагати, щоб для $(P,\prec)$ відношення $\prec$ було антисиметричним.}
+\end{example}
 
 \begin{definition}
 Задано $C$ -- категорія.\\
@@ -159,6 +175,23 @@ C(A,B) = \begin{cases} \emptyset, & A \neq B \\ \{1_A\}, & A = B \end{cases}
 \begin{align*}
 \text{набір стрілок $A,B$ в $D$ збігається з набором стрілок $A,B$ в $C$, для довільних об'єктів $A,B$ із $D$}
 \end{align*}
+\end{definition}
+
+\subsection{Узагальнення ін'єкції та сюр'єкції}
+\subsubsection{Монік}
+\begin{definition}
+Задано $C$ -- категорія.\\
+Морфізм $\alpha \colon x \to y$ називається \textbf{моніком}, якщо
+\begin{align*}
+\alpha \beta_1 = \alpha \beta_2 \implies \beta_1 = \beta_2
+\end{align*}
+Тобто морфізм -- монік, якщо можна завжди скоротити зліва.
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+z \arrow[r, shift left, "\beta_2"] \arrow[r, shift right, "\beta_1" {yshift=-10pt}] & x \arrow{r}{\alpha} & y
+\end{tikzcd}
+\end{figure}
 \end{definition}
 
 \end{document}
