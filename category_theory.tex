@@ -202,4 +202,15 @@ z \arrow[r, shift left, "\beta_2"] \arrow[r, shift right, "\beta_1" {yshift=-10p
 Нехай $C$ -- конкретна категорія та $\alpha \colon X \to Y$ -- ін'єктивний морфізм. Нехай $\beta_1, \beta_2 \colon Z \to X$ -- морфізми $C$ та припустимо, що $\alpha \beta_1 = \alpha \beta_2$. Для всіх $z \in Z$ ми маємо $\alpha(\beta_1(z)) = \alpha \beta_1 (z) = \alpha \beta_2(z) = \alpha(\beta_2(z))$, тому за ін'єктивністю, $\beta_1(z) = \beta_2(z)$. Отже, $\beta_1 = \beta_2$.
 \end{proof}
 
+\begin{remark}
+Зворотне твердження не працює.
+\end{remark}
+
+\begin{example}
+Розглянемо повну категорію $C = \text{Div}$ підкатегорії $\text{Grp}$. Тут абелева група називається \textbf{подільною}, якщо $\forall a \in A, \forall n \in \mathbb{Z} \setminus \{0\}: \exists b \in A: a = nb$.\\
+Оберемо об'єкти $\mathbb{Q}, \mathbb{Q}/_{\mathbb{Z}}$ із нашої категорії $C$ та гомоморфізм $\alpha \colon \mathbb{Q} \to \mathbb{Q}/_{\mathbb{Z}}$, який є сюр'єктивним. Даний морфізм не ін'єктивний, оскільки $\ker \alpha = \mathbb{Z}$. Стверджується, що $\alpha$ -- монік.\\
+Нехай $\beta_1,\beta_2 \colon A \to \mathbb{Q}$ -- морфізми в $C$ та припустимо, що $\beta_1 \neq \beta_2$. Тоді існує елемент $a \in A$, для якого $\beta_1(a) - \beta_2(a) \neq 0$. Ліворуч раціональне число, тож $\beta_1(a) - \beta_2(a) = \dfrac{r}{s}$ для деяких $r,s \in \mathbb{Z}$ та $r \neq 0, s \neq 0$. Оскільки $A$ -- подільна група, то існує для елемента $a \in A$ та $n = 2r$ існує $b \in A$, для якого $a = nb$. Тоді $\beta_1(nb) - \beta_2(nb) = n \beta_1(b) - n \beta_2(b) = \dfrac{r}{s}$.\\
+Отже, $\beta_1(b) - \beta_2(b) = \dfrac{1}{2s} \notin \mathbb{Z}$, а тому звідси $\alpha \beta_1 \neq \alpha \beta_2$.
+\end{example}
+
 \end{document}
