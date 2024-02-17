@@ -194,4 +194,12 @@ z \arrow[r, shift left, "\beta_2"] \arrow[r, shift right, "\beta_1" {yshift=-10p
 \end{figure}
 \end{definition}
 
+\begin{theorem}
+У конкретній категорії кожний ін'єктивний морфізм -- монік.
+\end{theorem}
+
+\begin{proof}
+Нехай $C$ -- конкретна категорія та $\alpha \colon X \to Y$ -- ін'єктивний морфізм. Нехай $\beta_1, \beta_2 \colon Z \to X$ -- морфізми $C$ та припустимо, що $\alpha \beta_1 = \alpha \beta_2$. Для всіх $z \in Z$ ми маємо $\alpha(\beta_1(z)) = \alpha \beta_1 (z) = \alpha \beta_2(z) = \alpha(\beta_2(z))$, тому за ін'єктивністю, $\beta_1(z) = \beta_2(z)$. Отже, $\beta_1 = \beta_2$.
+\end{proof}
+
 \end{document}
