@@ -320,4 +320,12 @@ x \arrow{r}{\alpha} & y \arrow[r, shift left, "\beta_1"] \arrow[r, shift right, 
 \end{tikzcd}
 \end{figure}
 \end{definition}
+
+\begin{theorem}
+У конкретній категорії кожний сюр'єктивний морфізм -- епік.
+\end{theorem}
+
+\begin{proof}
+Нехай $C$ -- конкретна категорія та $\alpha \colon X \to Y$ -- сюр'єктивний морфізм. Нехай $\beta_1,\beta_2 \colon Y \to Z$ -- морфізми $C$ та припустимо, що $\beta_1 \alpha = \beta_2 \alpha$. Оберемо $y \in Y$. Оскільки $\alpha$ -- сюр'єктивне, то $y = \alpha(x)$ для деякого $x \in X$. Тоді маємо $\beta_1(y) = \beta_1(\alpha(x)) = \beta_1 \alpha(x) = \beta_2 \alpha(x) = \beta_2(\alpha(x)) = \beta_2(y)$. Отже, $\beta_1 = \beta_2$.
+\end{proof}
 \end{document}
