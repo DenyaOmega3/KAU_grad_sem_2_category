@@ -386,18 +386,12 @@ x \arrow[r, shift right, "\alpha" {yshift=-10pt}] & y \arrow[l, shift right, das
 $\beta_1 = \beta_1 1_y = \beta_1 \alpha \beta = \beta_2 \alpha \beta = \beta_2 1_y = \beta_2$.
 \end{proof}
 
-\iffalse
 \begin{theorem}
-У конкретній категорії кожний розщеплений монік -- ін'єктивний морфізм.
+У конкретній категорії кожний розщеплений епік -- сюр'єктивний морфізм.
 \end{theorem}
 
 \begin{proof}
-Нехай $C$ -- конкретна категорія та $\alpha \colon X \to Y$ -- розщеплений монік, тобто існує морфізм $\beta \colon Y \to X$, для якого $\beta \alpha = 1_X$. Тоді\\
-$x_1 = 1_X (x_1) = \beta \alpha(x_1) = \beta(\alpha(x_1)) = \beta(\alpha(x_2)) = \beta \alpha(x_2) = 1_X(x_2) = x_2$.
+Нехай $C$ -- конкретна категорія та $\alpha \colon X \to Y$ -- розщеплений епік, тобто існує морфізм $\beta \colon Y \to X$, для якого $\alpha \beta = 1_Y$. Нехай $y \in Y$, тоді покладемо $x = \beta(y)$. Звідси\\
+$\alpha(x) = \alpha(\beta(y)) = \alpha \beta(y) = 1_Y(y) = y$.
 \end{proof}
-
-\begin{remark}
-Зворотне твердження не працює.
-\end{remark}
-\fi
 \end{document}
