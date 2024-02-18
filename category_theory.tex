@@ -360,4 +360,44 @@ $\beta_1\left( \dfrac{m}{n} \right) = \beta_1(m) \beta_1(n^{-1}) = \beta_2(m) \b
 $. Ці два відображення справдлі задають гомоморфізм груп. Для $k \in \Im \alpha$ ми маємо\\
 $\beta_2(k) = \sigma \lambda_k \sigma = \lambda_k \sigma^2 = \lambda_k = \beta_1(k)$, а тому $\beta_1 \alpha = \beta_2 \alpha$. Із іншого боку, $\beta_2(h_1)(e) = \sigma \lambda_{h_1} \sigma (e) = \sigma(h_1) = h_2 \neq h_1 = \lambda_{h_1}(e) = \beta_1(h_1)(e)$. Тож звідси $\beta_1 \neq \beta_2$. Тобто і в цьому випадку $\alpha$ -- не епік.
 \end{proof}
+
+\subsubsection{Розщеплений епік}
+\begin{definition}
+Задано $C$ -- категорія.\\
+Морфізм $\alpha \colon X \to Y$ називається \textbf{розщепленим епіком}, якщо
+\begin{align*}
+\exists \beta \colon y \to x: \alpha \beta = 1_y
+\end{align*}
+Морфізм -- розщеплений епік, тобто даний морфізм має правий оборотний (дуальне означення розщепленого моніка). Такий морфізм інколи ще називають \textbf{ретракцією}.
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+x \arrow[r, shift right, "\alpha" {yshift=-10pt}] & y \arrow[l, shift right, dashed, "\exists \beta" {yshift = 10pt}] \ar[looseness=4, out=-30, in=60, swap, "1_y"]
+\end{tikzcd}
+\end{figure}
+\end{definition}
+
+\iffalse
+\begin{theorem}
+Кожний розщеплений монік -- монік.
+\end{theorem}
+
+\begin{proof}
+Нехай $\alpha \colon x \to y$ -- розщеплений монік в категорії, тобто існує морфізм $\beta \colon y \to x$, для якого $\beta \alpha = 1_x$. Нехай $\beta_1,\beta_2 \colon z \to x$ будуть морфізмами та припустимо, що $\alpha \beta_1 = \alpha \beta_2$. Тоді \\
+$\beta_1 = 1_x \beta_1 = \beta \alpha \beta_1 = \beta \alpha \beta_2 = 1_x \beta_2 = \beta_2$.
+\end{proof}
+
+\begin{theorem}
+У конкретній категорії кожний розщеплений монік -- ін'єктивний морфізм.
+\end{theorem}
+
+\begin{proof}
+Нехай $C$ -- конкретна категорія та $\alpha \colon X \to Y$ -- розщеплений монік, тобто існує морфізм $\beta \colon Y \to X$, для якого $\beta \alpha = 1_X$. Тоді\\
+$x_1 = 1_X (x_1) = \beta \alpha(x_1) = \beta(\alpha(x_1)) = \beta(\alpha(x_2)) = \beta \alpha(x_2) = 1_X(x_2) = x_2$.
+\end{proof}
+
+\begin{remark}
+Зворотне твердження не працює.
+\end{remark}
+\fi
 \end{document}
