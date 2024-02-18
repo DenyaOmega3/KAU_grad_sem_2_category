@@ -394,4 +394,18 @@ $\beta_1 = \beta_1 1_y = \beta_1 \alpha \beta = \beta_2 \alpha \beta = \beta_2 1
 Нехай $C$ -- конкретна категорія та $\alpha \colon X \to Y$ -- розщеплений епік, тобто існує морфізм $\beta \colon Y \to X$, для якого $\alpha \beta = 1_Y$. Нехай $y \in Y$, тоді покладемо $x = \beta(y)$. Звідси\\
 $\alpha(x) = \alpha(\beta(y)) = \alpha \beta(y) = 1_Y(y) = y$.
 \end{proof}
+
+\begin{remark}
+Зворотне твердження не працює.
+\end{remark}
+
+\begin{example}
+Розглянемо категорію $\text{Grp}$ та визначимо морфізм $\alpha \colon \mathbb{Z}_4 \to \mathbb{Z}_2$, визначений як $\alpha(0) = \alpha(2) = 0$ та $\alpha(1) = \alpha(3) = 1$. Це буде сюр'єктивний гомоморфізм. Оскільки $1 \in \mathbb{Z}_2$ має порядок $2$, то будь-який гомоморфізм $\beta \colon \mathbb{Z}_2 \to \mathbb{Z}_4$ зобов'язаний відображати $1$ на $0$ або $2$. Таким чином, $\alpha \beta \neq 1_{\mathbb{Z}_2}$. Отже, $\alpha$ -- не розщеплений епік.
+\bigskip \\
+Можна аналогічні міркування провести для категорії Rng.
+\end{example}
+
+\begin{example}
+Розглянемо категорію Top. Маємо $\alpha \colon \mathbb{R} \to \mathbb{R}$ -- тотожне відображення; у першого -- дискретна топологія, у другого -- стандартна. Тоді $\alpha$ -- сюр'єктивний морфізм, але аналогічним чином можна довести, що це не епічний морфізм (як це було з епічним моніком).
+\end{example}
 \end{document}
