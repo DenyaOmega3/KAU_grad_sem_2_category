@@ -328,4 +328,16 @@ x \arrow{r}{\alpha} & y \arrow[r, shift left, "\beta_1"] \arrow[r, shift right, 
 \begin{proof}
 Нехай $C$ -- конкретна категорія та $\alpha \colon X \to Y$ -- сюр'єктивний морфізм. Нехай $\beta_1,\beta_2 \colon Y \to Z$ -- морфізми $C$ та припустимо, що $\beta_1 \alpha = \beta_2 \alpha$. Оберемо $y \in Y$. Оскільки $\alpha$ -- сюр'єктивне, то $y = \alpha(x)$ для деякого $x \in X$. Тоді маємо $\beta_1(y) = \beta_1(\alpha(x)) = \beta_1 \alpha(x) = \beta_2 \alpha(x) = \beta_2(\alpha(x)) = \beta_2(y)$. Отже, $\beta_1 = \beta_2$.
 \end{proof}
+
+\begin{remark}
+Зворотне твердження не працює.
+\end{remark}
+
+\begin{example}
+Розглянемо категорію $\text{Rng}$ та оберемо вкладення $\alpha \colon \mathbb{Z} \to \mathbb{Q}$, яке не є сюр'єктивним. Але доведемо, що $\alpha$ -- епік.\\
+Нехай $\beta_1,\beta_2 \colon \mathbb{Q} \to \mathbb{R}$ -- морфізми з $\text{Rng}$ та припустимо, що $\beta_1 \alpha = \beta_2 \alpha$. Тоді $\beta_1(n) = \beta_2(n)$ для будь-якого цілого $n \in \mathbb{Z}$. При $n \neq 0$ ми маємо \\
+$\beta_1(n^{-1}) = \beta_1(n^{-1} \cdot 1) = \beta_1(n^{-1})\beta_1(1) = \beta_1(n^{-1}) \beta_2(1) = \beta_1(n^{-1})\beta_2(n)\beta_2(n^{-1}) = \beta_1(n^{-1})\beta_1(n)\beta_2(n^{-1}) = \beta_1(1)\beta_2(n^{-1}) = \beta_2(1)\beta_2(n^{-1}) = \beta_2(1 \cdot n^{-1}) = \beta_2(n^{-1})$.\\
+Таким чином, для $m,n \in \mathbb{Z}$ при $n \neq 0$ ми маємо наступне:\\
+$\beta_1\left( \dfrac{m}{n} \right) = \beta_1(m) \beta_1(n^{-1}) = \beta_2(m) \beta_2(n^{-1}) = \beta_2(m) \beta_2(n^{-1}) = \beta_2\left( \dfrac{m}{n} \right)$.
+\end{example}
 \end{document}
