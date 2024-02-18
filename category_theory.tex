@@ -304,4 +304,20 @@ $\alpha$ -- розщеплений монік $\iff \begin{cases} \alpha \text{ 
 Приклади нам показали, що жодні два терміни не збігаються загалом.\\
 У більш загальних категоріям \textit{ін'єктивність} більше не визначена, бо ми там оперуємо множинами. Але якщо слово \textit{ін'єктивний} видалити, то діаграма залишається справедливою.\\
 У повній підкатегорії \text{Set}, що містить всі непорожні множини, всі ці три терміни збігаються.
+
+\subsubsection{Епікі}
+\begin{definition}
+Задано $C$ -- категорія.\\
+Морфізм $\alpha \colon x \to y$ називається \textbf{епіком}, якщо
+\begin{align*}
+\beta_1 \alpha = \beta_2 \alpha \implies \beta_1 = \beta_2
+\end{align*}
+Тобто морфізм -- епік, якщо можна завжди скоротити справа (дуальне означення моніка).
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+x \arrow{r}{\alpha} & y \arrow[r, shift left, "\beta_1"] \arrow[r, shift right, "\beta_2" {yshift=-10pt}] & z
+\end{tikzcd}
+\end{figure}
+\end{definition}
 \end{document}
