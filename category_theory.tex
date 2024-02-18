@@ -461,4 +461,17 @@ $\alpha(x) = \alpha(\beta(y)) = \alpha \beta(y) = 1_Y(y) = y$.
 \bigskip \\
 \leftproof Дано: $\alpha$ -- розщеплений монік та розщеплений епік. Тобто існують морфізми $\beta, \gamma \colon y \to x$, для яких $\beta \alpha = 1_x, \quad \alpha \gamma = 1_y$. Але тоді $\beta = \beta 1_y = \beta \alpha \gamma = 1_x \gamma = \gamma$. Отже, $\alpha$ -- ізоморфізм.
 \end{proof}
+\noindent Тепер ми маємо ось таку діаграму. Італік позначений лише для конкретних категорій.
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+\text{монік} & & \text{епік} \\
+& \arrow[Rightarrow] {lu} \text{біморфізм} \arrow[Rightarrow] {ru} & \\
+\arrow[Rightarrow] {uu} \textit{ін'єктивний} & & \textit{сюр'єктивний} \arrow[Rightarrow] {uu} \\
+& \arrow[Rightarrow] {lu} \textit{бієкція} \arrow[Rightarrow] {ru} \arrow[Rightarrow] {uu} & \\
+\arrow[Rightarrow] {uu}
+\text{розщеплений монік} & & \text{розщеплений епік} \arrow[Rightarrow] {uu} \\
+& \arrow[Rightarrow] {lu} \text{ізоморфізм} \arrow[Rightarrow] {ru} \arrow[Rightarrow] {uu} & \\
+\end{tikzcd}
+\end{figure}
 \end{document}
