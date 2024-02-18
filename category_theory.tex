@@ -425,4 +425,21 @@ $\alpha(x) = \alpha(\beta(y)) = \alpha \beta(y) = 1_Y(y) = y$.
 Приклади нам показали, що жодні два терміни не збігаються загалом.\\
 У більш загальних категоріям \textit{сюр'єктивність} більше не визначена, бо ми там оперуємо множинами. Але якщо слово \textit{сюр'єктивний} видалити, то діаграма залишається справедливою.\\
 У категорії \text{Set} всі ці три терміни збігаються.
+
+\subsubsection{Біморфізми та ізоморфізми}
+\begin{definition}
+Задано $C$ -- категорія.\\
+Морфізм $\alpha \colon x \to y$ називається \textbf{біморфізмом}, якщо
+\begin{align*}
+\alpha \text{ -- одночасно монік та епік}
+\end{align*}
+Морфізм $\alpha \colon x \to y$ називається \textbf{ізоморфізмом}, якщо
+\begin{align*}
+\exists \beta \colon y \to x: \beta \alpha = 1_x \qquad \alpha \beta = 1_y
+\end{align*}
+\end{definition}
+
+\begin{remark}
+Якщо $\alpha$ -- ізоморфізм, то морфізм $\beta$ в означенні -- єдиний та позначається за $\alpha^{-1}$.
+\end{remark}
 \end{document}
