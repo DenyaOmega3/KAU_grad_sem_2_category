@@ -71,7 +71,17 @@
 
 \DeclareMathOperator{\Ob}{Ob}
 \DeclareMathOperator{\Hom}{Hom}
-\DeclareMathOperator{\Set}{Set}
+
+\DeclareMathOperator{\Set}{\textbf{Set}}
+\DeclareMathOperator{\Grp}{\textbf{Grp}}
+\DeclareMathOperator{\Ab}{\textbf{Ab}}
+\DeclareMathOperator{\Ring}{\textbf{Ring}}
+\DeclareMathOperator{\Rng}{\textbf{Rng}}
+\DeclareMathOperator{\Top}{\textbf{Top}}
+\DeclareMathOperator{\Man}{\textbf{Man}}
+\DeclareMathOperator{\Mod}{\textbf{Mod}}
+\DeclareMathOperator{\Met}{\textbf{Met}}
+\DeclareMathOperator{\Mani}{\textbf{Man}}
 
 \title{Теорія категорії \\ І курс магістратура, 2 семестр}
     	
@@ -104,11 +114,15 @@
 Морфізми ще часто називають \textbf{стрілочками}.
 \end{remark}
 
+\begin{remark}
+Морфізм $1_x$ для кожного об'єкта $x$ -- єдиний.
+\end{remark}
+
 \begin{example}
 Розглянемо $\Set$ -- це буде категорія, яка складається з наступного:
 \begin{itemize}[nosep, wide=0pt, label={--}]
 \item $\Ob(\Set)$ -- набір всіх множин;
-\item $\Hom(\Set)$ -- набір всіх відображень;
+\item $\Hom(\Set)$ -- набір всіх функцій;
 \item тотожне відображення $1_X \colon X \to X$ задається як $x \mapsto x$;
 \item композиція між $f \colon X \to Y$ та $g \colon Y \to Z$ задається $g \circ f$ таким чином: $x \mapsto f(x) \mapsto g(f(x))$.
 \end{itemize}
@@ -120,12 +134,20 @@
 
 \begin{example}
 Розглянемо стисло ще приклади категорій:
-\begin{enumerate}[nosep,wide=0pt,label={\arabic*)}]
-\item $\text{Grp}$ -- об'єктами будуть групи; стрілками будуть гомоморфізми груп;
-\item $\text{Ring}$ -- об'єктами будуть кільця; стрілками будуть гомоморфізмами кілець;
-\item $\text{Top}$ -- об'єктами будуть топологічні простори; стрілочками будуть неперервні відображення;
-\item $\text{Man}$ -- об'єктами будуть гладкі многовиди; стрілочками будуть гладкі відображення.
-\end{enumerate}
+\begin{figure}[H]
+\centering
+\begin{tabular}{c|c|c}
+Категорія & Об'єкти & Морфізми \\
+$\Grp$ & групи & гомоморфізми груп \\
+$\Ab$ & абелеві групи & гомоморфізми груп \\
+$\Rng$ & кільця & гомоморфізми кілець \\
+$\Ring$ & кільця з одиницею & гомоморфізм кілець, що зберігають одиницю \\
+${}_{R}\Mod$ & $R$-модуль & $R$-лінійне відображення \\
+$\Top$ & топологічні простори & неперервній відображення \\
+$\Met$ & метричні простори & неперервні відображення \\
+$\Mani$ & гладкі многовиди & гладкі відображення
+\end{tabular}
+\end{figure}
 \end{example}
 
 \begin{example}
