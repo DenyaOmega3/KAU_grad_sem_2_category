@@ -86,17 +86,16 @@
 \begin{definition}
 \textbf{Категорія} $C$ складається з наступних компонент:
 \begin{itemize}[nosep, wide=0pt, label={--}]
-\item із набору \textbf{об'єктів}; об'єкти позначають за $X,Y,Z,\dots$, а набір позначають за $\Ob(C)$;
-\item із набору \textbf{морфізмів}; морфізми позначають за $f,g,h,\dots$, а набір позначають за  $\Hom(C)$;
-\item кожний морфізм має \textbf{область визначення} та \textbf{область значень}; позначається зазвичай як $f \colon X \to Y$, де об'єкт $X$ -- область визначення, об'єкт $Y$ -- область значень;
-\item кожний об'єкт $X$ має \textbf{тотожний морфізм} $1_X \colon X \to X$;
-\item для кожних морфізмів $f \colon X \to Y,\ g \colon Y \to Z$ існуватиме \textbf{композиція морфізмів} $g \circ f \colon X \to Z$.
+\item із набору \textbf{об'єктів}; об'єкти позначають за $x,y,z,\dots$, а набір позначають за $\Ob(C)$;
+\item із набору \textbf{морфізмів із $x$ в $y$} $C(x,y)$ для всіх $x,y \in C$; морфізми позначають за $\alpha,\beta,\gamma,\dots$. Позначення $\alpha \colon x \to y$ або $x \overset{\alpha}{\to} y$ означають $\alpha$ -- морфізм із $x$ в $y$; ми називаємо $x$ \textbf{джерелом} та $y$ \textbf{ціллю};
+\item кожний об'єкт $x$ має \textbf{тотожний морфізм} $1_x \colon x \to x$;
+\item для кожних морфізмів $\alpha \colon x \to y,\ \beta \colon y \to z$ існуватиме \textbf{композиція морфізмів} $\beta \alpha \colon x \to z$.
 \end{itemize}
 При цьому всьому зобов'язані виконуватися такі аксіоми:
 \begin{center}
 \begin{enumerate}[nosep,wide=0pt,label={\arabic*)}]
-\item для всіх морфізмів $f \colon X \to Y$ виконано $1_Y \circ f = f \circ 1_X = f$;
-\item для кожних трьох морфізмів $f \colon W \to X, g \colon X \to Y, h \colon Y \to Z$ виконується асоціативність композиції, тобто $f \circ (g \circ h) = (f \circ g) \circ h$.
+\item для всіх морфізмів $\alpha \colon x \to y$ виконано $1_y \circ \alpha = \alpha \circ 1_x = \alpha$;
+\item для кожних трьох морфізмів $\alpha \colon w \to x, \beta \colon x \to y, \gamma \colon y \to z$ виконується асоціативність композиції, тобто $\alpha (\beta \gamma) = (\alpha \beta) \gamma$.
 \end{enumerate}
 \end{center}
 \end{definition}
