@@ -301,7 +301,7 @@ $\alpha \beta_1(g) = \alpha (g) \overset{g \in \ker \alpha}{=} e = \alpha(e) = \
 \subsubsection{Розщеплений мономорфізм}
 \begin{definition}
 Задано $C$ -- категорія.\\
-Морфізм $\alpha \colon x \to y$ називається \textbf{розщепленим мономорфізмом} (\text{split monic}), якщо
+Морфізм $\alpha \colon x \to y$ називається \textbf{розщепленим мономорфізмом} (\textbf{split monic}), якщо
 \begin{align*}
 \exists \beta \colon y \to x: \beta \alpha = 1_x
 \end{align*}
@@ -328,7 +328,7 @@ $\beta_1 = 1_x \beta_1 = \beta \alpha \beta_1 = \beta \alpha \beta_2 = 1_x \beta
 \end{theorem}
 
 \begin{proof}
-Нехай $C$ -- конкретна категорія та $\alpha \colon X \to Y$ -- розщеплений мономорфізм, тобто існує морфізм $\beta \colon Y \to X$, для якого $\beta \alpha = 1_X$. Тоді\\
+Нехай $C$ -- конкретна категорія та $\alpha \colon X \to Y$ -- розщеплений мономорфізм, тобто існує морфізм $\beta \colon Y \to X$, для якого $\beta \alpha = 1_X$. Припустимо $\alpha(x_1) = \alpha(x_2)$. Тоді\\
 $x_1 = 1_X (x_1) = \beta \alpha(x_1) = \beta(\alpha(x_1)) = \beta(\alpha(x_2)) = \beta \alpha(x_2) = 1_X(x_2) = x_2$.
 \end{proof}
 
@@ -345,7 +345,7 @@ $x_1 = 1_X (x_1) = \beta \alpha(x_1) = \beta(\alpha(x_1)) = \beta(\alpha(x_2)) =
 
 \begin{example}
 Розглянемо категорію $\Top$. Оберемо тотожне відображення $\alpha \colon \mathbb{R} \to \mathbb{R}$, де область визначення має дискретну топологія, а область значень -- стандартну. Тоді $\alpha$ -- ін'єктивний, але не розщеплений мономорфізм.\\
-!Припустимо, що існує морфізм $\beta \colon \mathbb{R} \to \mathbb{R}$, для якого $\beta \alpha = 1_\mathbb{R}$. Тоді $\beta = \beta 1_{\mathbb{R}} = \beta \alpha = 1_{\mathbb{R}}$, однак множина $\{0\}$ відкрита в $\mathbb{R}$ з дискретною топологією, але не відкрита в стандартній топології. Це суперечність! Тому що $\beta$ -- неперервне відображення.
+!Припустимо, що існує морфізм $\beta \colon \mathbb{R} \to \mathbb{R}$, для якого $\beta \alpha = 1_\mathbb{R}$. Тоді $\beta = \beta 1_{\mathbb{R}} = \beta \alpha = 1_{\mathbb{R}}$, однак множина $\{0\}$ відкрита в $\mathbb{R}$ з дискретною топологією, але $\beta^{-1}\{0\} = \{0\}$ не відкрита в стандартній топології. Це суперечність! Тому що $\beta$ -- неперервне відображення.
 \end{example}
 
 \begin{theorem}
@@ -358,7 +358,7 @@ $\alpha$ -- розщеплений мономорфізм $\iff \begin{cases} \a
 Тепер нехай $X = \emptyset$. Тоді за умовою, існує $\beta \colon Y \to X$, для якого $\beta \alpha = 1_X = 1_\emptyset$. Тоді оскільки $\beta$ -- функція, то $Y = \emptyset$.
 \bigskip \\
 \leftproof Дано: $\alpha$ -- ін'єктивний та $X = \emptyset \implies Y = \emptyset$.\\
-Нехай $X \neq \emptyset$, тобто існує елемент $x_0 \in X$. Оскільки $\alpha$ -- ін'єктивний, то $\alpha|_{\Im \alpha} \colon X \to \Im \alpha$ буде задавати бієкцію, тож для кожного $y \in \Im \alpha$ існує єдиний елемент $\beta(y) \in X$, для якого $\alpha(\beta(y)) = y$. Це визначає функцію $\beta \colon \Im \alpha \to X$, що розширюється до функції $\beta \colon Y \to X$, якщо покласти $\beta(y) = x_0, y \notin \Im \alpha$. Для $x \in X$ ми маємо $\beta \alpha(x) = \beta(\alpha(x)) = x = 1_X(x)$.\\
+Нехай $X \neq \emptyset$, тобто існує елемент $x_0 \in X$. Оскільки $\alpha$ -- ін'єктивний, то $\alpha \colon X \to \Im \alpha$, буде задавати бієкцію, тож для кожного $y \in \Im \alpha$ існує єдиний елемент $\beta(y) \in X$, для якого $\alpha(\beta(y)) = y$. Це визначає функцію $\beta \colon \Im \alpha \to X$, що розширюється до функції $\beta \colon Y \to X$, якщо покласти $\beta(y) = x_0, y \notin \Im \alpha$. Для $x \in X$ ми маємо $\beta \alpha(x) = \beta(\alpha(x)) = x = 1_X(x)$.\\
 Нехай $X = \emptyset$, тоді $Y = \emptyset$ та порожня функція $\beta \colon Y \to X$ задовольняє $\beta \alpha = 1_X$.
 \end{proof}
 \noindent
@@ -410,7 +410,7 @@ $\beta_1\left( \dfrac{m}{n} \right) = \beta_1(m) \beta_1(n^{-1}) = \beta_2(m) \b
 \end{example}
 
 \begin{theorem}
-У категорія $\Set, \Top, \Grp$ морфізм сюр'єктивний $\iff$ морфізм -- епіморфізм.
+У категоріях $\Set, \Top, \Grp$ морфізм сюр'єктивний $\iff$ морфізм -- епіморфізм.
 \end{theorem}
 
 \begin{proof}
@@ -420,7 +420,7 @@ $\beta_1\left( \dfrac{m}{n} \right) = \beta_1(m) \beta_1(n^{-1}) = \beta_2(m) \b
 \bigskip \\
 ($\Top$). Проводиться те саме доведення, як з Set. Тільки треба $\alpha \colon X \to Y$ брати уже неперервне відображення, а на просторі $\{0,1\}$ задати недискретну топологію, щоб $\beta_1,\beta_2$ стали неерервними.
 \bigskip \\
-($\Grp$). !Нехай $\alpha \colon G \to H$ -- гомоморфізм груп та припустимо, що це -- не сюр'єктивний. Звідси випливає, що $[H:\Im \alpha] > 1$. Ми тоді доведемо, що $\alpha$ -- не епіморфізм.\\
+($\Grp$). Нехай $\alpha \colon G \to H$ -- гомоморфізм груп та припустимо, що це -- не сюр'єктивний. Звідси випливає, що $[H:\Im \alpha] > 1$. Ми тоді доведемо, що $\alpha$ -- не епіморфізм.\\
 Випадок $[H:\Im \alpha] = 2$. Нехай $\beta_1 \colon H \to H/_{\Im \alpha}$ -- канонічний гомоморфізм та $\beta_2 \colon H \to H/_{\Im \alpha}$ -- тривіальний гомоморфізм. Тоді $\beta_1 \alpha = \beta_2 \alpha$, але при цьому $\beta_1 \ne q\beta_2$, оскільки $\Im \alpha \neq H$. Тобто в даному випадку $\alpha$ -- не епіморфізм.\\
 Випадок $[H:\Im \alpha] > 2$. Тоді існують два різних правих суміжних класи $K_1 = \Im \alpha \cdot h_1$ та $K_2 = \Im \alpha \cdot h_2$, причому $K_1,K_2 \neq \Im \alpha$. Покладемо $b = h_1^{-1}h_2$ та зауважимо, що $K_1b = K_2$, а звідси $K_2b^{-1} = K_1$. Позначимо $S_H$ за групу симетрії на $H$ та оберемо бієкцію $\sigma \in S_H$, що задана формулою $\sigma(h) = \begin{cases} hb, & h \in K_1, \\ hb^{-1}, & h \in K_2, \\ h, & \text{інакше} \end{cases}$. Можна зауважити, що $\sigma^2 = 1_H$ та $\sigma(kh) = k \sigma(h)$ для всіх $k \in \Im \alpha, h \in H$. Для $h \in H$ нехай $\lambda_h$ буде елементом $S_H$, що заданий формулою $\lambda_h(x) = hx (x \in H)$. Тоді звідси отримаємо $\sigma \lambda_k = \lambda_k \sigma$ для всіх $k \in \Im \alpha$.\\
 Визначимо $\beta_1,\beta_2 \colon H \to S_H$ як $\beta_1(h) = \lambda_k$ та $\beta_2(h) = \sigma \lambda_k \sigma
@@ -469,11 +469,11 @@ $\alpha(x) = \alpha(\beta(y)) = \alpha \beta(y) = 1_Y(y) = y$.
 \begin{example}
 Розглянемо категорію $\Grp$ та визначимо морфізм $\alpha \colon \mathbb{Z}_4 \to \mathbb{Z}_2$, визначений як $\alpha(0) = \alpha(2) = 0$ та $\alpha(1) = \alpha(3) = 1$. Це буде сюр'єктивний гомоморфізм. Оскільки $1 \in \mathbb{Z}_2$ має порядок $2$, то будь-який гомоморфізм $\beta \colon \mathbb{Z}_2 \to \mathbb{Z}_4$ зобов'язаний відображати $1$ на $0$ або $2$. Таким чином, $\alpha \beta \neq 1_{\mathbb{Z}_2}$. Отже, $\alpha$ -- не розщеплений епіморфізм.
 \bigskip \\
-Можна аналогічні міркування провести для категорії Rng.
+Можна аналогічні міркування провести для категорії $\Rng$.
 \end{example}
 
 \begin{example}
-Розглянемо категорію Top. Маємо $\alpha \colon \mathbb{R} \to \mathbb{R}$ -- тотожне відображення; у першого -- дискретна топологія, у другого -- стандартна. Тоді $\alpha$ -- сюр'єктивний морфізм, але аналогічним чином можна довести, що це не епічний морфізм (як це було з епічним мономорфізмом).
+Розглянемо категорію $\Top$. Маємо $\alpha \colon \mathbb{R} \to \mathbb{R}$ -- тотожне відображення; у першого -- дискретна топологія, у другого -- стандартна. Тоді $\alpha$ -- сюр'єктивний морфізм, але аналогічним чином можна довести, що це не епічний морфізм (як це було з епічним мономорфізмом).
 \end{example}
 
 \begin{theorem}
@@ -491,7 +491,7 @@ $\alpha(x) = \alpha(\beta(y)) = \alpha \beta(y) = 1_Y(y) = y$.
 \end{align*}
 Приклади нам показали, що жодні два терміни не збігаються загалом.\\
 У більш загальних категоріям \textit{сюр'єктивність} більше не визначена, бо ми там оперуємо множинами. Але якщо слово \textit{сюр'єктивний} видалити, то діаграма залишається справедливою.\\
-У категорії \text{Set} всі ці три терміни збігаються.
+У категорії $\Set$ всі ці три терміни збігаються.
 
 \subsubsection{Біморфізми та ізоморфізми}
 \begin{definition}
@@ -535,7 +535,7 @@ $\alpha(x) = \alpha(\beta(y)) = \alpha \beta(y) = 1_Y(y) = y$.
 \text{мономорфізм} & & \text{епіморфізм} \\
 & \arrow[Rightarrow] {lu} \text{біморфізм} \arrow[Rightarrow] {ru} & \\
 \arrow[Rightarrow] {uu} \textit{ін'єктивний} & & \textit{сюр'єктивний} \arrow[Rightarrow] {uu} \\
-& \arrow[Rightarrow] {lu} \textit{бієкція} \arrow[Rightarrow] {ru} \arrow[Rightarrow] {uu} & \\
+& \arrow[Rightarrow] {lu} \textit{бієктивний} \arrow[Rightarrow] {ru} \arrow[Rightarrow] {uu} & \\
 \arrow[Rightarrow] {uu}
 \text{розщеплений мономорфізм} & & \text{розщеплений епіморфізм} \arrow[Rightarrow] {uu} \\
 & \arrow[Rightarrow] {lu} \text{ізоморфізм} \arrow[Rightarrow] {ru} \arrow[Rightarrow] {uu} & \\
