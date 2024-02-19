@@ -241,28 +241,30 @@ C(x,y) = \begin{cases} \emptyset, & x \neq y \\ \{1_x\}, & x = y \end{cases}
 \end{example}
 
 \subsection{Узагальнення ін'єкції та сюр'єкції}
-\subsubsection{Монік}
+\subsubsection{Мономорфізм}
 \begin{definition}
 Задано $C$ -- категорія.\\
-Морфізм $\alpha \colon x \to y$ називається \textbf{моніком}, якщо
+Морфізм $\alpha \colon x \to y$ називається \textbf{мономорфізмом} (\textbf{monic}), якщо
 \begin{align*}
 \alpha \beta_1 = \alpha \beta_2 \implies \beta_1 = \beta_2
 \end{align*}
-Тобто морфізм -- монік, якщо можна завжди скоротити зліва.
+Тобто морфізм -- мономорфізм, якщо можна завжди скоротити зліва.
 \begin{figure}[H]
 \centering
 \begin{tikzcd}
 z \arrow[r, shift left, "\beta_2"] \arrow[r, shift right, "\beta_1" {yshift=-10pt}] & x \arrow{r}{\alpha} & y
 \end{tikzcd}
 \end{figure}
+\noindent
+Часто мономорфізми позначають як $\alpha \colon x \rightarrowtail y$.
 \end{definition}
 
 \begin{theorem}
-У конкретній категорії кожний ін'єктивний морфізм -- монік.
+У конкретній категорії кожний ін'єктивний морфізм -- мономорфізм.
 \end{theorem}
 
 \begin{proof}
-Нехай $C$ -- конкретна категорія та $\alpha \colon X \to Y$ -- ін'єктивний морфізм. Нехай $\beta_1, \beta_2 \colon Z \to X$ -- морфізми $C$ та припустимо, що $\alpha \beta_1 = \alpha \beta_2$. Для всіх $z \in Z$ ми маємо $\alpha(\beta_1(z)) = \alpha \beta_1 (z) = \alpha \beta_2(z) = \alpha(\beta_2(z))$, тому за ін'єктивністю, $\beta_1(z) = \beta_2(z)$. Отже, $\beta_1 = \beta_2$.
+Нехай $C$ -- конкретна категорія та $\alpha \colon X \to Y$ -- ін'єктивний морфізм. Нехай $\beta_1, \beta_2 \colon Z \to X$ -- морфізми $C$ та припустимо, що $\alpha \beta_1 = \alpha \beta_2$. Для всіх $z \in Z$ ми маємо $\alpha(\beta_1(z)) = \alpha \beta_1 (z) = \alpha \beta_2(z) = \alpha(\beta_2(z))$, тому за ін'єктивністю, $\beta_1(z) = \beta_2(z)$. Отже, $\beta_1 = \beta_2$, тобто $\alpha$ -- мономорфізм.
 \end{proof}
 
 \begin{remark}
@@ -271,39 +273,39 @@ z \arrow[r, shift left, "\beta_2"] \arrow[r, shift right, "\beta_1" {yshift=-10p
 
 \begin{example}
 Розглянемо повну категорію $\textbf{Div}$ підкатегорії $\Grp$. Тут абелева група з категорії $\textbf{Div}$ називається \textbf{подільною}, якщо $\forall a \in A, \forall n \in \mathbb{Z} \setminus \{0\}: \exists b \in A: a = nb$.\\
-Оберемо об'єкти $\mathbb{Q}, \mathbb{Q}/_{\mathbb{Z}}$ із нашої категорії $\textbf{Div}$ та гомоморфізм $\alpha \colon \mathbb{Q} \to \mathbb{Q}/_{\mathbb{Z}}$, який є сюр'єктивним. Даний морфізм не ін'єктивний, оскільки $\ker \alpha = \mathbb{Z}$. Стверджується, що $\alpha$ -- монік.\\
+Оберемо об'єкти $\mathbb{Q}, \mathbb{Q}/_{\mathbb{Z}}$ із нашої категорії $\textbf{Div}$ та гомоморфізм $\alpha \colon \mathbb{Q} \to \mathbb{Q}/_{\mathbb{Z}}$, який є сюр'єктивним. Даний морфізм не ін'єктивний, оскільки $\ker \alpha = \mathbb{Z}$. Стверджується, що $\alpha$ -- мономорфізм.\\
 Нехай $\beta_1,\beta_2 \colon A \to \mathbb{Q}$ -- морфізми в $\textbf{Div}$ та припустимо, що $\beta_1 \neq \beta_2$. Тоді існує елемент $a \in A$, для якого $\beta_1(a) - \beta_2(a) \neq 0$. Ліворуч раціональне число, тож $\beta_1(a) - \beta_2(a) = \dfrac{r}{s}$ для деяких $r,s \in \mathbb{Z}$ та $r \neq 0, s \neq 0$. Оскільки $A$ -- подільна група, то існує для елемента $a \in A$ та $n = 2r$ існує $b \in A$, для якого $a = nb$. Тоді $\beta_1(nb) - \beta_2(nb) = n \beta_1(b) - n \beta_2(b) = \dfrac{r}{s}$.\\
 Отже, $\beta_1(b) - \beta_2(b) = \dfrac{1}{2s} \notin \mathbb{Z}$, а тому звідси $\alpha \beta_1 \neq \alpha \beta_2$.
 \end{example}
 
 \begin{theorem}
-У категоріях $\Set,\Top,\Grp,\Rng$ морфізм ін'єктивний $\iff$ морфізм -- монік.
+У категоріях $\Set,\Top,\Grp,\Rng$ морфізм ін'єктивний $\iff$ морфізм -- мономорфізм.
 \end{theorem}
 
 \begin{proof}
-Ми вже знаємо, що ін'єктивний морфізм -- монік. Залишилося довести зворотний бік для цих категоріях.
+Ми вже знаємо, що ін'єктивний морфізм -- мономорфізм. Залишилося довести зворотний бік для цих категоріях.
 \bigskip \\
-($\Set$). Нехай $\alpha \colon X \to Y$ -- монік морфізм. Оберемо $x_1,x_2 \in X$ та припустимо, що $\alpha(x_1) = \alpha(x_2)$. Покладемо $z = 0 \in \mathbb{Z}$ та покладемо $Z = \{z\}$ (хоча тут може бути будь-який сінглтон), визначимо $\beta_1, \beta_2 \colon Z \to X$ як $\beta_1(z) = x_1, \beta_2(z) = x_2$. Тоді\\
+($\Set$). Нехай $\alpha \colon X \to Y$ -- мономорфізм. Оберемо $x_1,x_2 \in X$ та припустимо, що $\alpha(x_1) = \alpha(x_2)$. Покладемо $z = 0 \in \mathbb{Z}$ та покладемо $Z = \{z\}$ (хоча тут може бути будь-який сінглтон), визначимо $\beta_1, \beta_2 \colon Z \to X$ як $\beta_1(z) = x_1, \beta_2(z) = x_2$. Тоді\\
 $\alpha \beta_1(z) = \alpha(\beta_1(z)) = \alpha(x_1) = \alpha(x_2) = \alpha(\beta_2(z)) = \alpha \beta_2(z)$.\\
 За монічністю, звідси $\beta_1 = \beta_2$, тобто $x_1 = \beta_1(z) = \beta_2(z) = x_2$. Таким чином, $\alpha$ -- ін'єктивний.
 \bigskip \\
 ($\Top$). Насправді, все аналогічно, тільки є деякі зауваження. На множину $Z$ треба задати дискретну топологію (єдина можлива топологія для неї). Відображення $\beta_1,\beta_2$ будуть уже неперервними через дискретність $Z$.
 \bigskip \\
-($\Grp$). Нехай $\alpha \colon G \to H$ -- монік морфізм. Розглянемо $\beta_1, \beta_2 \colon \ker \alpha \to G$ -- перший буде вкладенням, другий буде тривіальним. Тоді $\alpha \beta_1 = \alpha \beta_2$. Дійсно,\\
+($\Grp$). Нехай $\alpha \colon G \to H$ -- мономорфізм. Розглянемо $\beta_1, \beta_2 \colon \ker \alpha \to G$ -- перший буде вкладенням, другий буде тривіальним. Тоді $\alpha \beta_1 = \alpha \beta_2$. Дійсно,\\
 $\alpha \beta_1(g) = \alpha (g) \overset{g \in \ker \alpha}{=} e = \alpha(e) = \alpha \beta_2(g)$.\\
 За монічністю, звідси $\beta_1 = \beta_2$, тобто $\beta_1$ -- тривіальне вкладення. Отже, $\ker \alpha = \{e\}$, а це означає ін'єктивніть $\alpha$.
 \bigskip \\
 ($\Rng$). Таке саме доведення.
 \end{proof}
 
-\subsubsection{Розщеплений монік}
+\subsubsection{Розщеплений мономорфізм}
 \begin{definition}
 Задано $C$ -- категорія.\\
-Морфізм $\alpha \colon X \to Y$ називається \textbf{розщепленим моніком}, якщо
+Морфізм $\alpha \colon X \to Y$ називається \textbf{розщепленим мономорфізмом} (\text{split monic}), якщо
 \begin{align*}
 \exists \beta \colon y \to x: \beta \alpha = 1_x
 \end{align*}
-Морфізм -- розщеплений монік, тобто даний морфізм має лівий оборотний.
+Морфізм -- розщеплений мономорфізм, тобто даний морфізм має лівий оборотний.
 \begin{figure}[H]
 \centering
 \begin{tikzcd}
@@ -313,20 +315,20 @@ x \ar[looseness=4, out=150, in=240, swap, "1_x"] \arrow[r, shift right, "\alpha"
 \end{definition}
 
 \begin{theorem}
-Кожний розщеплений монік -- монік.
+Кожний розщеплений мономорфізм -- мономорфізм.
 \end{theorem}
 
 \begin{proof}
-Нехай $\alpha \colon x \to y$ -- розщеплений монік в категорії, тобто існує морфізм $\beta \colon y \to x$, для якого $\beta \alpha = 1_x$. Нехай $\beta_1,\beta_2 \colon z \to x$ будуть морфізмами та припустимо, що $\alpha \beta_1 = \alpha \beta_2$. Тоді \\
+Нехай $\alpha \colon x \to y$ -- розщеплений мономорфізм в категорії, тобто існує морфізм $\beta \colon y \to x$, для якого $\beta \alpha = 1_x$. Нехай $\beta_1,\beta_2 \colon z \to x$ будуть морфізмами та припустимо, що $\alpha \beta_1 = \alpha \beta_2$. Тоді \\
 $\beta_1 = 1_x \beta_1 = \beta \alpha \beta_1 = \beta \alpha \beta_2 = 1_x \beta_2 = \beta_2$.
 \end{proof}
 
 \begin{theorem}
-У конкретній категорії кожний розщеплений монік -- ін'єктивний морфізм.
+У конкретній категорії кожний розщеплений мономорфізм -- ін'єктивний морфізм.
 \end{theorem}
 
 \begin{proof}
-Нехай $C$ -- конкретна категорія та $\alpha \colon X \to Y$ -- розщеплений монік, тобто існує морфізм $\beta \colon Y \to X$, для якого $\beta \alpha = 1_X$. Тоді\\
+Нехай $C$ -- конкретна категорія та $\alpha \colon X \to Y$ -- розщеплений мономорфізм, тобто існує морфізм $\beta \colon Y \to X$, для якого $\beta \alpha = 1_X$. Тоді\\
 $x_1 = 1_X (x_1) = \beta \alpha(x_1) = \beta(\alpha(x_1)) = \beta(\alpha(x_2)) = \beta \alpha(x_2) = 1_X(x_2) = x_2$.
 \end{proof}
 
@@ -335,24 +337,24 @@ $x_1 = 1_X (x_1) = \beta \alpha(x_1) = \beta(\alpha(x_1)) = \beta(\alpha(x_2)) =
 \end{remark}
 
 \begin{example}
-Розглянемо категорію $\Grp$. Вкладення $\alpha \colon 2 \mathbb{Z} \to \mathbb{Z}$ -- ін'єктивний гомоморфізм. Але це не буде розщепленим моніком.\\
-!Припустимо, що все ж таки він розщеплений монік, тобто існує гомоморфізм $\beta \colon \mathbb{Z} \to 2 \mathbb{Z}$, для якого $\beta \alpha = 1_{2 \mathbb{Z}}$. Тоді $2 \beta(1) = \beta(2) = \beta(\alpha(2)) = \beta \alpha(2) = 2$, тобто $\beta(1) = 1$, але це суперечність! Просто тому що $\beta$ відображає на $2 \mathbb{Z}$.
+Розглянемо категорію $\Grp$. Вкладення $\alpha \colon 2 \mathbb{Z} \to \mathbb{Z}$ -- ін'єктивний гомоморфізм. Але це не буде розщепленим мономорфізмом.\\
+!Припустимо, що все ж таки він розщеплений мономорфізм, тобто існує гомоморфізм $\beta \colon \mathbb{Z} \to 2 \mathbb{Z}$, для якого $\beta \alpha = 1_{2 \mathbb{Z}}$. Тоді $2 \beta(1) = \beta(2) = \beta(\alpha(2)) = \beta \alpha(2) = 2$, тобто $\beta(1) = 1$, але це суперечність! Просто тому що $\beta$ відображає на $2 \mathbb{Z}$.
 \bigskip \\
 Можна аналогічні міркування провести для категорії $\Rng$.
 \end{example}
 
 \begin{example}
-Розглянемо категорію $\Top$. Оберемо тотожне відображення $\alpha \colon \mathbb{R} \to \mathbb{R}$, де область визначення має дискретну топологія, а область значень -- стандартну. Тоді $\alpha$ -- ін'єктивний, але не розщеплений монік.\\
+Розглянемо категорію $\Top$. Оберемо тотожне відображення $\alpha \colon \mathbb{R} \to \mathbb{R}$, де область визначення має дискретну топологія, а область значень -- стандартну. Тоді $\alpha$ -- ін'єктивний, але не розщеплений мономорфізм.\\
 !Припустимо, що існує морфізм $\beta \colon \mathbb{R} \to \mathbb{R}$, для якого $\beta \alpha = 1_\mathbb{R}$. Тоді $\beta = \beta 1_{\mathbb{R}} = \beta \alpha = 1_{\mathbb{R}}$, однак множина $\{0\}$ відкрита в $\mathbb{R}$ з дискретною топологією, але не відкрита в стандартній топології. Це суперечність! Тому що $\beta$ -- неперервне відображення.
 \end{example}
 
 \begin{theorem}
 Задано $\alpha \colon X \to Y$ -- морфізм в категорії $\Set$.\\
-$\alpha$ -- розщеплений монік $\iff \begin{cases} \alpha \text{ -- ін'єктивний} \\ X = \emptyset \implies Y = \emptyset \end{cases}$.
+$\alpha$ -- розщеплений мономорфізм $\iff \begin{cases} \alpha \text{ -- ін'єктивний} \\ X = \emptyset \implies Y = \emptyset \end{cases}$.
 \end{theorem}
 
 \begin{proof}
-\rightproof Дано: $\alpha$ -- розщеплений монік. Оскільки $\Set$ -- конкретна категорія, то звідси $\alpha$ -- ін'єктивний.\\
+\rightproof Дано: $\alpha$ -- розщеплений мономорфізм. Оскільки $\Set$ -- конкретна категорія, то звідси $\alpha$ -- ін'єктивний.\\
 Тепер нехай $X = \emptyset$. Тоді за умовою, існує $\beta \colon Y \to X$, для якого $\beta \alpha = 1_X = 1_\emptyset$. Тоді оскільки $\beta$ -- функція, то $Y = \emptyset$.
 \bigskip \\
 \leftproof Дано: $\alpha$ -- ін'єктивний та $X = \emptyset \implies Y = \emptyset$.\\
@@ -362,30 +364,32 @@ $\alpha$ -- розщеплений монік $\iff \begin{cases} \alpha \text{ 
 \noindent
 Отже, в \textit{конкретній} категорії маємо таку діаграму:
 \begin{align*}
-\text{розщеплений монік} \implies \textit{ін'єктивний} \implies \text{монік}
+\text{розщеплений мономорфізм} \implies \textit{ін'єктивний} \implies \text{мономорфізм}
 \end{align*}
 Приклади нам показали, що жодні два терміни не збігаються загалом.\\
 У більш загальних категоріям \textit{ін'єктивність} більше не визначена, бо ми там оперуємо множинами. Але якщо слово \textit{ін'єктивний} видалити, то діаграма залишається справедливою.\\
 У повній підкатегорії $\Set$, що містить всі непорожні множини, всі ці три терміни збігаються.
 
-\subsubsection{Епікі}
+\subsubsection{Епіморфізм}
 \begin{definition}
 Задано $C$ -- категорія.\\
-Морфізм $\alpha \colon x \to y$ називається \textbf{епіком}, якщо
+Морфізм $\alpha \colon x \to y$ називається \textbf{епіморфізмом} (\textbf{epic}), якщо
 \begin{align*}
 \beta_1 \alpha = \beta_2 \alpha \implies \beta_1 = \beta_2
 \end{align*}
-Тобто морфізм -- епік, якщо можна завжди скоротити справа (дуальне означення моніка).
+Тобто морфізм -- епіморфізм, якщо можна завжди скоротити справа (дуальне означення мономорфізма).
 \begin{figure}[H]
 \centering
 \begin{tikzcd}
 x \arrow{r}{\alpha} & y \arrow[r, shift left, "\beta_1"] \arrow[r, shift right, "\beta_2" {yshift=-10pt}] & z
 \end{tikzcd}
 \end{figure}
+\noindent
+Часто епіморфізми позначають як $\alpha \colon x \twoheadrightarrow y$.
 \end{definition}
 
 \begin{theorem}
-У конкретній категорії кожний сюр'єктивний морфізм -- епік.
+У конкретній категорії кожний сюр'єктивний морфізм -- епіморфізм.
 \end{theorem}
 
 \begin{proof}
@@ -397,7 +401,7 @@ x \arrow{r}{\alpha} & y \arrow[r, shift left, "\beta_1"] \arrow[r, shift right, 
 \end{remark}
 
 \begin{example}
-Розглянемо категорію $\Rng$ та оберемо вкладення $\alpha \colon \mathbb{Z} \to \mathbb{Q}$, яке не є сюр'єктивним. Але доведемо, що $\alpha$ -- епік.\\
+Розглянемо категорію $\Rng$ та оберемо вкладення $\alpha \colon \mathbb{Z} \to \mathbb{Q}$, яке не є сюр'єктивним. Але доведемо, що $\alpha$ -- епіморфізм.\\
 Нехай $\beta_1,\beta_2 \colon \mathbb{Q} \to \mathbb{R}$ -- морфізми з $\Rng$ та припустимо, що $\beta_1 \alpha = \beta_2 \alpha$. Тоді $\beta_1(n) = \beta_2(n)$ для будь-якого цілого $n \in \mathbb{Z}$. При $n \neq 0$ ми маємо \\
 $\beta_1(n^{-1}) = \beta_1(n^{-1} \cdot 1) = \beta_1(n^{-1})\beta_1(1) = \beta_1(n^{-1}) \beta_2(1) = \beta_1(n^{-1})\beta_2(n)\beta_2(n^{-1}) = \beta_1(n^{-1})\beta_1(n)\beta_2(n^{-1}) = \beta_1(1)\beta_2(n^{-1}) = \beta_2(1)\beta_2(n^{-1}) = \beta_2(1 \cdot n^{-1}) = \beta_2(n^{-1})$.\\
 Таким чином, для $m,n \in \mathbb{Z}$ при $n \neq 0$ ми маємо наступне:\\
@@ -406,32 +410,32 @@ $\beta_1\left( \dfrac{m}{n} \right) = \beta_1(m) \beta_1(n^{-1}) = \beta_2(m) \b
 \end{example}
 
 \begin{theorem}
-У категорія $\Set, \Top, \Grp$ морфізм сюр'єктивний $\iff$ морфізм -- епік.
+У категорія $\Set, \Top, \Grp$ морфізм сюр'єктивний $\iff$ морфізм -- епіморфізм.
 \end{theorem}
 
 \begin{proof}
-Ми вже знаємо, що сюр'єктивний морфізм -- епік. Залишилося довести зворотний бік для цих категоріях.
+Ми вже знаємо, що сюр'єктивний морфізм -- епіморфізм. Залишилося довести зворотний бік для цих категоріях.
 \bigskip \\
-($\Set$). Нехай $\alpha \colon X \to Y$ -- епік морфізм. Нехай $\beta_1 \colon Y \to \{0,1\}$ буде характеристичною функцією для $\Im \alpha$ та нехай $\beta_2 \colon Y \to \{0,1\}$ буде стало дорівнювати $1$. Тоді $\beta_1 \alpha = \beta_2 \alpha$, тому за епічністю, $\beta_1 = \beta_2$. Із цього випливає, що $\Im \alpha = Y$, що доводить сюр'єктивність $\alpha$.
+($\Set$). Нехай $\alpha \colon X \to Y$ -- епіморфізм морфізм. Нехай $\beta_1 \colon Y \to \{0,1\}$ буде характеристичною функцією для $\Im \alpha$ та нехай $\beta_2 \colon Y \to \{0,1\}$ буде стало дорівнювати $1$. Тоді $\beta_1 \alpha = \beta_2 \alpha$, тому за епічністю, $\beta_1 = \beta_2$. Із цього випливає, що $\Im \alpha = Y$, що доводить сюр'єктивність $\alpha$.
 \bigskip \\
 ($\Top$). Проводиться те саме доведення, як з Set. Тільки треба $\alpha \colon X \to Y$ брати уже неперервне відображення, а на просторі $\{0,1\}$ задати недискретну топологію, щоб $\beta_1,\beta_2$ стали неерервними.
 \bigskip \\
-($\Grp$). !Нехай $\alpha \colon G \to H$ -- гомоморфізм груп та припустимо, що це -- не сюр'єктивний. Звідси випливає, що $[H:\Im \alpha] > 1$. Ми тоді доведемо, що $\alpha$ -- не епік морфізм.\\
-Випадок $[H:\Im \alpha] = 2$. Нехай $\beta_1 \colon H \to H/_{\Im \alpha}$ -- канонічний гомоморфізм та $\beta_2 \colon H \to H/_{\Im \alpha}$ -- тривіальний гомоморфізм. Тоді $\beta_1 \alpha = \beta_2 \alpha$, але при цьому $\beta_1 \ne q\beta_2$, оскільки $\Im \alpha \neq H$. Тобто в даному випадку $\alpha$ -- не епік.\\
+($\Grp$). !Нехай $\alpha \colon G \to H$ -- гомоморфізм груп та припустимо, що це -- не сюр'єктивний. Звідси випливає, що $[H:\Im \alpha] > 1$. Ми тоді доведемо, що $\alpha$ -- не епіморфізм.\\
+Випадок $[H:\Im \alpha] = 2$. Нехай $\beta_1 \colon H \to H/_{\Im \alpha}$ -- канонічний гомоморфізм та $\beta_2 \colon H \to H/_{\Im \alpha}$ -- тривіальний гомоморфізм. Тоді $\beta_1 \alpha = \beta_2 \alpha$, але при цьому $\beta_1 \ne q\beta_2$, оскільки $\Im \alpha \neq H$. Тобто в даному випадку $\alpha$ -- не епіморфізм.\\
 Випадок $[H:\Im \alpha] > 2$. Тоді існують два різних правих суміжних класи $K_1 = \Im \alpha \cdot h_1$ та $K_2 = \Im \alpha \cdot h_2$, причому $K_1,K_2 \neq \Im \alpha$. Покладемо $b = h_1^{-1}h_2$ та зауважимо, що $K_1b = K_2$, а звідси $K_2b^{-1} = K_1$. Позначимо $S_H$ за групу симетрії на $H$ та оберемо бієкцію $\sigma \in S_H$, що задана формулою $\sigma(h) = \begin{cases} hb, & h \in K_1, \\ hb^{-1}, & h \in K_2, \\ h, & \text{інакше} \end{cases}$. Можна зауважити, що $\sigma^2 = 1_H$ та $\sigma(kh) = k \sigma(h)$ для всіх $k \in \Im \alpha, h \in H$. Для $h \in H$ нехай $\lambda_h$ буде елементом $S_H$, що заданий формулою $\lambda_h(x) = hx (x \in H)$. Тоді звідси отримаємо $\sigma \lambda_k = \lambda_k \sigma$ для всіх $k \in \Im \alpha$.\\
 Визначимо $\beta_1,\beta_2 \colon H \to S_H$ як $\beta_1(h) = \lambda_k$ та $\beta_2(h) = \sigma \lambda_k \sigma
 $. Ці два відображення справдлі задають гомоморфізм груп. Для $k \in \Im \alpha$ ми маємо\\
-$\beta_2(k) = \sigma \lambda_k \sigma = \lambda_k \sigma^2 = \lambda_k = \beta_1(k)$, а тому $\beta_1 \alpha = \beta_2 \alpha$. Із іншого боку, $\beta_2(h_1)(e) = \sigma \lambda_{h_1} \sigma (e) = \sigma(h_1) = h_2 \neq h_1 = \lambda_{h_1}(e) = \beta_1(h_1)(e)$. Тож звідси $\beta_1 \neq \beta_2$. Тобто і в цьому випадку $\alpha$ -- не епік.
+$\beta_2(k) = \sigma \lambda_k \sigma = \lambda_k \sigma^2 = \lambda_k = \beta_1(k)$, а тому $\beta_1 \alpha = \beta_2 \alpha$. Із іншого боку, $\beta_2(h_1)(e) = \sigma \lambda_{h_1} \sigma (e) = \sigma(h_1) = h_2 \neq h_1 = \lambda_{h_1}(e) = \beta_1(h_1)(e)$. Тож звідси $\beta_1 \neq \beta_2$. Тобто і в цьому випадку $\alpha$ -- не епіморфізм.
 \end{proof}
 
-\subsubsection{Розщеплений епік}
+\subsubsection{Розщеплений епіморфізм}
 \begin{definition}
 Задано $C$ -- категорія.\\
-Морфізм $\alpha \colon X \to Y$ називається \textbf{розщепленим епіком}, якщо
+Морфізм $\alpha \colon X \to Y$ називається \textbf{розщепленим епіморфізмом}, якщо
 \begin{align*}
 \exists \beta \colon y \to x: \alpha \beta = 1_y
 \end{align*}
-Морфізм -- розщеплений епік, тобто даний морфізм має правий оборотний (дуальне означення розщепленого моніка). Такий морфізм інколи ще називають \textbf{ретракцією}.
+Морфізм -- розщеплений епіморфізм, тобто даний морфізм має правий оборотний (дуальне означення розщепленого мономорфізма). Такий морфізм інколи ще називають \textbf{ретракцією}.
 \begin{figure}[H]
 \centering
 \begin{tikzcd}
@@ -441,20 +445,20 @@ x \arrow[r, shift right, "\alpha" {yshift=-10pt}] & y \arrow[l, shift right, das
 \end{definition}
 
 \begin{theorem}
-Кожний розщеплений епік -- епік.
+Кожний розщеплений епіморфізм -- епіморфізм.
 \end{theorem}
 
 \begin{proof}
-Нехай $\alpha \colon x \to y$ -- розщеплений епік в категорії, тобто існує морфізм $\beta \colon y \to x$, для якого $\alpha \beta = 1_1$. Нехай $\beta_1,\beta_2 \colon y \to z$ будуть морфізмами та припустимо, що $\beta_1 \alpha = \beta_2 \alpha$. Тоді \\
+Нехай $\alpha \colon x \to y$ -- розщеплений епіморфізм в категорії, тобто існує морфізм $\beta \colon y \to x$, для якого $\alpha \beta = 1_1$. Нехай $\beta_1,\beta_2 \colon y \to z$ будуть морфізмами та припустимо, що $\beta_1 \alpha = \beta_2 \alpha$. Тоді \\
 $\beta_1 = \beta_1 1_y = \beta_1 \alpha \beta = \beta_2 \alpha \beta = \beta_2 1_y = \beta_2$.
 \end{proof}
 
 \begin{theorem}
-У конкретній категорії кожний розщеплений епік -- сюр'єктивний морфізм.
+У конкретній категорії кожний розщеплений епіморфізм -- сюр'єктивний морфізм.
 \end{theorem}
 
 \begin{proof}
-Нехай $C$ -- конкретна категорія та $\alpha \colon X \to Y$ -- розщеплений епік, тобто існує морфізм $\beta \colon Y \to X$, для якого $\alpha \beta = 1_Y$. Нехай $y \in Y$, тоді покладемо $x = \beta(y)$. Звідси\\
+Нехай $C$ -- конкретна категорія та $\alpha \colon X \to Y$ -- розщеплений епіморфізм, тобто існує морфізм $\beta \colon Y \to X$, для якого $\alpha \beta = 1_Y$. Нехай $y \in Y$, тоді покладемо $x = \beta(y)$. Звідси\\
 $\alpha(x) = \alpha(\beta(y)) = \alpha \beta(y) = 1_Y(y) = y$.
 \end{proof}
 
@@ -463,27 +467,27 @@ $\alpha(x) = \alpha(\beta(y)) = \alpha \beta(y) = 1_Y(y) = y$.
 \end{remark}
 
 \begin{example}
-Розглянемо категорію $\Grp$ та визначимо морфізм $\alpha \colon \mathbb{Z}_4 \to \mathbb{Z}_2$, визначений як $\alpha(0) = \alpha(2) = 0$ та $\alpha(1) = \alpha(3) = 1$. Це буде сюр'єктивний гомоморфізм. Оскільки $1 \in \mathbb{Z}_2$ має порядок $2$, то будь-який гомоморфізм $\beta \colon \mathbb{Z}_2 \to \mathbb{Z}_4$ зобов'язаний відображати $1$ на $0$ або $2$. Таким чином, $\alpha \beta \neq 1_{\mathbb{Z}_2}$. Отже, $\alpha$ -- не розщеплений епік.
+Розглянемо категорію $\Grp$ та визначимо морфізм $\alpha \colon \mathbb{Z}_4 \to \mathbb{Z}_2$, визначений як $\alpha(0) = \alpha(2) = 0$ та $\alpha(1) = \alpha(3) = 1$. Це буде сюр'єктивний гомоморфізм. Оскільки $1 \in \mathbb{Z}_2$ має порядок $2$, то будь-який гомоморфізм $\beta \colon \mathbb{Z}_2 \to \mathbb{Z}_4$ зобов'язаний відображати $1$ на $0$ або $2$. Таким чином, $\alpha \beta \neq 1_{\mathbb{Z}_2}$. Отже, $\alpha$ -- не розщеплений епіморфізм.
 \bigskip \\
 Можна аналогічні міркування провести для категорії Rng.
 \end{example}
 
 \begin{example}
-Розглянемо категорію Top. Маємо $\alpha \colon \mathbb{R} \to \mathbb{R}$ -- тотожне відображення; у першого -- дискретна топологія, у другого -- стандартна. Тоді $\alpha$ -- сюр'єктивний морфізм, але аналогічним чином можна довести, що це не епічний морфізм (як це було з епічним моніком).
+Розглянемо категорію Top. Маємо $\alpha \colon \mathbb{R} \to \mathbb{R}$ -- тотожне відображення; у першого -- дискретна топологія, у другого -- стандартна. Тоді $\alpha$ -- сюр'єктивний морфізм, але аналогічним чином можна довести, що це не епічний морфізм (як це було з епічним мономорфізмом).
 \end{example}
 
 \begin{theorem}
-У категорії $\Set$ морфізм -- розщеплений епік $\iff$ морфізм сюр'єктивний.
+У категорії $\Set$ морфізм -- розщеплений епіморфізм $\iff$ морфізм сюр'єктивний.
 \end{theorem}
 
 \begin{proof}
 Залишилося довести у зворотний бік.\\
-\leftproof Дано: $\alpha \colon X \to Y$ -- сюр'єктивний морфізм. Тобто для кожного $y \in Y$ знайдеться $\beta(y) \in X$, для якого $\alpha(\beta(y)) = y$, а це визначає функцію $\beta \colon Y \to X$, яка задовольняє $\alpha \beta = 1_Y$. Отже, $\alpha$ -- розщеплений епік.
+\leftproof Дано: $\alpha \colon X \to Y$ -- сюр'єктивний морфізм. Тобто для кожного $y \in Y$ знайдеться $\beta(y) \in X$, для якого $\alpha(\beta(y)) = y$, а це визначає функцію $\beta \colon Y \to X$, яка задовольняє $\alpha \beta = 1_Y$. Отже, $\alpha$ -- розщеплений епіморфізм.
 \end{proof}
 \noindent
 Отже, в \textit{конкретній} категорії маємо таку діаграму:
 \begin{align*}
-\text{розщеплений епік} \implies \textit{сюр'єктивний} \implies \text{епік}
+\text{розщеплений епіморфізм} \implies \textit{сюр'єктивний} \implies \text{епіморфізм}
 \end{align*}
 Приклади нам показали, що жодні два терміни не збігаються загалом.\\
 У більш загальних категоріям \textit{сюр'єктивність} більше не визначена, бо ми там оперуємо множинами. Але якщо слово \textit{сюр'єктивний} видалити, то діаграма залишається справедливою.\\
@@ -494,7 +498,7 @@ $\alpha(x) = \alpha(\beta(y)) = \alpha \beta(y) = 1_Y(y) = y$.
 Задано $C$ -- категорія.\\
 Морфізм $\alpha \colon x \to y$ називається \textbf{біморфізмом}, якщо
 \begin{align*}
-\alpha \text{ -- одночасно монік та епік}
+\alpha \text{ -- одночасно мономорфізм та епіморфізм}
 \end{align*}
 Морфізм $\alpha \colon x \to y$ називається \textbf{ізоморфізмом}, якщо
 \begin{align*}
@@ -516,24 +520,24 @@ $\alpha(x) = \alpha(\beta(y)) = \alpha \beta(y) = 1_Y(y) = y$.
 \end{definition}
 
 \begin{theorem}
-Морфізм -- ізоморфізм $\iff$ морфізм -- розщеплений монік та розщеплений епік.
+Морфізм -- ізоморфізм $\iff$ морфізм -- розщеплений мономорфізм та розщеплений епіморфізм.
 \end{theorem}
 
 \begin{proof}
 \rightproof \textit{миттєво випливає з означення.}
 \bigskip \\
-\leftproof Дано: $\alpha$ -- розщеплений монік та розщеплений епік. Тобто існують морфізми $\beta, \gamma \colon y \to x$, для яких $\beta \alpha = 1_x, \quad \alpha \gamma = 1_y$. Але тоді $\beta = \beta 1_y = \beta \alpha \gamma = 1_x \gamma = \gamma$. Отже, $\alpha$ -- ізоморфізм.
+\leftproof Дано: $\alpha$ -- розщеплений мономорфізм та розщеплений епіморфізм. Тобто існують морфізми $\beta, \gamma \colon y \to x$, для яких $\beta \alpha = 1_x, \quad \alpha \gamma = 1_y$. Але тоді $\beta = \beta 1_y = \beta \alpha \gamma = 1_x \gamma = \gamma$. Отже, $\alpha$ -- ізоморфізм.
 \end{proof}
 \noindent Тепер ми маємо ось таку діаграму. Італік позначений лише для конкретних категорій.
 \begin{figure}[H]
 \centering
 \begin{tikzcd}
-\text{монік} & & \text{епік} \\
+\text{мономорфізм} & & \text{епіморфізм} \\
 & \arrow[Rightarrow] {lu} \text{біморфізм} \arrow[Rightarrow] {ru} & \\
 \arrow[Rightarrow] {uu} \textit{ін'єктивний} & & \textit{сюр'єктивний} \arrow[Rightarrow] {uu} \\
 & \arrow[Rightarrow] {lu} \textit{бієкція} \arrow[Rightarrow] {ru} \arrow[Rightarrow] {uu} & \\
 \arrow[Rightarrow] {uu}
-\text{розщеплений монік} & & \text{розщеплений епік} \arrow[Rightarrow] {uu} \\
+\text{розщеплений мономорфізм} & & \text{розщеплений епіморфізм} \arrow[Rightarrow] {uu} \\
 & \arrow[Rightarrow] {lu} \text{ізоморфізм} \arrow[Rightarrow] {ru} \arrow[Rightarrow] {uu} & \\
 \end{tikzcd}
 \end{figure}
@@ -543,7 +547,7 @@ $\alpha(x) = \alpha(\beta(y)) = \alpha \beta(y) = 1_Y(y) = y$.
 \end{theorem}
 
 \begin{proof}
-($\Set$). Нехай $\alpha \colon X \to Y$ -- біморфізм. Зважаючи на діаграму вище, достатньо довести, що $\alpha$ -- ізоморфізм. Оскільки $\alpha$ -- монік та епік, то в даній категорії $\alpha$ -- ін'єктивний та сюр'єктивний, тобто бієктивний. Значить, існує морфізм $\alpha^{-1}$, для якого $\alpha^{-1} \alpha = 1_X, \quad \alpha \alpha^{-1} = 1_Y$, що й доводить ізоморфність.
+($\Set$). Нехай $\alpha \colon X \to Y$ -- біморфізм. Зважаючи на діаграму вище, достатньо довести, що $\alpha$ -- ізоморфізм. Оскільки $\alpha$ -- мономорфізм та епіморфізм, то в даній категорії $\alpha$ -- ін'єктивний та сюр'єктивний, тобто бієктивний. Значить, існує морфізм $\alpha^{-1}$, для якого $\alpha^{-1} \alpha = 1_X, \quad \alpha \alpha^{-1} = 1_Y$, що й доводить ізоморфність.
 \bigskip \\
 ($\Grp$). Насправді, аналогічно. Але треба окремо пересвідчитися, що якщо $\alpha$ -- гомоморфізм, то $\alpha^{-1}$ буде ним також.
 \end{proof}
