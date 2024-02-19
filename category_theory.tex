@@ -151,6 +151,27 @@ $\Mani$ & гладкі многовиди & гладкі відображенн�
 \end{example}
 
 \begin{example}
+Можна представити категорію за допомогою графів. Категорія \textbf{0} буде взагалі порожньо виглядати. Категоріїя \textbf{1}, категорія \textbf{2}, категорія \textbf{3} виглядають таким чином:
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+\text{\textbullet} \ar[looseness=4, out=210, in=120]
+\end{tikzcd}
+\qquad
+\begin{tikzcd}
+\text{\textbullet} \arrow{r}{} \ar[looseness=4, out=210, in=120] & \text{\textbullet} \ar[looseness=4, out=60, in=-30]
+\end{tikzcd}
+\qquad
+\begin{tikzcd}
+\text{\textbullet} \arrow{rd}{} \arrow{rr}{} \ar[looseness=4, out=210, in=120] && \text{\textbullet} \ar[looseness=4, out=60, in=-30] \\
+& \text{\textbullet} \ar[looseness=4, out=-45, in=225] \arrow{ru}{}
+\end{tikzcd}
+\end{figure}
+\noindent
+Так само є категорії \textbf{4},\textbf{5}, \dots
+\end{example}
+
+\begin{example}
 Розглянемо моноїд $M$. Ми можемо утворити категорію $\mathcal{M}$, яка містить єдиний об'єкт -- це моноїд.
 \end{example}
 
