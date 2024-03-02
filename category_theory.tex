@@ -642,4 +642,32 @@ $\gamma'(y)(i) = \pi_i(\gamma'(y)) = \pi_i \gamma'(y) = \alpha_i(y) = \gamma(y)(
 Для категорій $\Rng, {}_R \Mod$ аналогічно все.
 \end{example}
 
+\begin{example}
+Залишилася категорія $\Top$.
+\end{example}
+
+\subsection{Кодобуток}
+\begin{definition}
+Задано $C$ -- категорія та $X_1,X_2 \in C$ -- об'єкти.\\
+\textbf{Кодобутком $X_1,X_2$} називають об'єкт $X \in C$, що оснащений парою морфізмів $\imath_1 \colon X_1 \to X$ та $\imath_2 \colon X_2 \to X$, що є так званими \textbf{морфізмами вкладень}, які задовольняють такій умові:
+\begin{align*}
+\forall Y \in C, \forall f_1 \colon X_1 \to Y, f_2 \colon X_2 \to Y: \exists ! f \colon X \to Y: \\
+f_1 = f \imath_1 \qquad f_2 = f \imath_2
+\end{align*}
+Позначення: $X = X_1 \sqcup X_2$.
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+& Y & \\
+& X_1 \sqcup X_2 \arrow[u,dashed,"f"] & \\
+\arrow[ruu, bend right=-45, "f_1"] \arrow[ur, swap, "\imath_1"] X_1 & & X_2 \arrow[ul, "\imath_2"] \arrow[luu, bend right=45, swap, "f_2"]
+\end{tikzcd}
+\end{figure}
+\end{definition}
+
+\begin{remark}
+Аналогічним чином можна визначити в категорії $C$ \textbf{кодобуток $X_i, i \in I$} (деякої сім'ї об'єктів).\\
+Позначення $X = \displaystyle\coprod_{i \in I} X_i$.
+\end{remark}
+
 \end{document}
