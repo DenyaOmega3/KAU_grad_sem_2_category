@@ -596,4 +596,29 @@ $\alpha(x) = \alpha(\beta(y)) = \alpha \beta(y) = 1_Y(y) = y$.
 Задано $C$ -- категорія, $d_1,d_2 \in C$ -- обидва термінальні. Тоді $d_1 \cong d_2$.\\
 \textit{Вправа: довести.}
 \end{theorem}
+
+\subsection{Добуток}
+\begin{definition}
+Задано $C$ -- категорія та $X_1,X_2 \in C$ -- об'єкти.\\
+\textbf{Добутком $X_1,X_2$} називають об'єкт $X \in C$, що оснащений парою морфізмів $\pi_1 \colon X \to X_1$ та $\pi_2 \colon X \to X_2$, що є так званими \textbf{проєктивними морфізмами}, які задовольняють такій умові:
+\begin{align*}
+\forall Y \in C, \forall f_1 \colon Y \to X_1, f_2 \colon Y \to X_2: \exists ! f \colon Y \to X: \\
+f_1 = \pi_1 f \qquad f_2 = \pi_2 f
+\end{align*}
+Позначення: $X = X_1 \times X_2$.
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+& \arrow[ldd, bend right=45, swap, "f_1"] Y \arrow[d,dashed,"f"] \arrow[rdd, bend right=-45, "f_2"] & \\
+& \arrow[dl, "\pi_1"] X_1 \times X_2 \arrow[dr, swap, "\pi_2"] & \\
+X_1 & & X_2 
+\end{tikzcd}
+\end{figure}
+\end{definition}
+
+\begin{remark}
+Аналогічним чином можна визначити в категорії $C$ \textbf{добуток $X_i, i \in I$} (деякої сім'ї об'єктів).\\
+Позначення $X = \displaystyle\prod_{i \in I} X_i$.
+\end{remark}
+
 \end{document}
