@@ -557,4 +557,17 @@ $\alpha(x) = \alpha(\beta(y)) = \alpha \beta(y) = 1_Y(y) = y$.
 ($\Rng$). Зауважимо, що $\mathbb{Z} \hookrightarrow \mathbb{Q}$ буде біморфізмом, але не бієкцією.\\
 ($\Top$). Тотожне відображення $R \to R$, з дискретною та стандартною топологією відповідно, буде бієкцією, але не ізоморфізмом (тобто гомеоморфізмом в даному випадку).
 \end{remark}
+
+\subsection{Ініціальні та термінальні об'єкти}
+\begin{definition}
+Задано $C$ -- категорія та $c \in C$ -- об'єкт.\\
+Об'єкт $c$ називається \textbf{ініціальним}, якщо
+\begin{align*}
+\forall x \in C: \exists ! \alpha \colon c \to x
+\end{align*}
+Об'єкт $c$ називається \textbf{термінальним}, якщо
+\begin{align*}
+\forall x \in C: \exists! \beta \colon x \to c
+\end{align*}
+\end{definition}
 \end{document}
