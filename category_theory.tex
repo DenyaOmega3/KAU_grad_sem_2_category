@@ -722,7 +722,7 @@ y \arrow[ru,"\beta"] & &
 \end{figure}
 \noindent
 композицією морфізмів буде просто композиція в категорії $C$.\\
-\textbf{Зрівняльником} (або \textbf{equalizer}) $\lambda_1,\lambda_2$ будемо називати термінальни об'єкт категорії $\textbf{D}_{\text{eq}}$.
+\textbf{Зрівняльником} (або \textbf{equalizer}) $\lambda_1,\lambda_2$ будемо називати термінальний об'єкт категорії $\textbf{D}_{\text{eq}}$.
 \bigskip \\
 Позначимо термінальний об'єкт за $(p,\imath)$. Тоді за означенням термінальності, для кожного об'єкта $(x,\alpha)$ існує єдиний морфізм між $(x,\alpha)$ та $(p,\imath)$. Тобто це означає, що існує єдиний морфізм $\gamma \colon x \to p$ в категорії $C$, для якого $\imath \gamma = \alpha$ -- тобто такий морфізм, що діаграма нижче комутується:
 \begin{figure}[H]
@@ -770,5 +770,48 @@ p \arrow[ru,"\imath"] & &
 \end{figure}
 \noindent За початковими припущеннями, $\imath \beta_1 = \alpha$, $\imath \beta_2 = \alpha$. Але за єдиністю відображення з такими властивостями (зважаючи на означення зрівняльника), $\beta_1 = \beta_2$. Звідси $\imath$ -- мономорфізм.
 \end{proof}
+
+\subsection{Козрівняльник}
+\begin{definition}
+Задано $C$ -- категорія та $\lambda_1,\lambda_2 \colon a \to b$ -- два морфізми.
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+a \arrow[r, shift left, "\lambda_1"] \arrow[r, shift right, "\lambda_2" {yshift=-10pt}] & b
+\end{tikzcd}
+\end{figure}
+\noindent
+Сформуємо категорію $\textbf{D}_{\text{coeq}}$ таким чином:\\
+об'єктами будуть пари $(x,\alpha)$, де $x$ -- об'єкт категорії $C$ та $\alpha \colon b \to x$ -- морфізм в $C$, щоб $\alpha \lambda_1 = \alpha \lambda_2$;
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+a \arrow[r, shift left, "\lambda_1"] \arrow[r, shift right, "\lambda_2" {yshift=-10pt}] & b \arrow[r, "\alpha"] & x
+\end{tikzcd}
+\end{figure}
+\noindent
+морфізмом між об'єктами $(x,\alpha) \to (y,\beta)$ буде морфізм $\gamma \colon x \to y$ категорії $C$, для якого $\gamma \alpha = \beta$;
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+& & y \\
+a \arrow[r, shift left, "\lambda_1"] \arrow[r, shift right, "\lambda_2" {yshift=-10pt}] & b \arrow[ru,"\beta"] \arrow[rd,"\alpha"] & \\
+& & x \arrow[uu, swap, "\gamma"]
+\end{tikzcd}
+\end{figure}
+\noindent
+композицією морфізмів буде просто композиція в категорії $C$.\\
+\textbf{Козрівняльником} (або \textbf{coequalizer}) $\lambda_1,\lambda_2$ будемо називати ініціальний об'єкт категорії $\textbf{D}_{\text{coeq}}$.
+\bigskip \\
+Позначимо ініціальний об'єкт за $(q,\pi)$. Тоді за означенням ініціальності, для кожного об'єкта $(x,\alpha)$ існує єдиний морфізм між $(q,\pi)$ та $(x,\alpha)$. Тобто це означає, що існує єдиний морфізм $\gamma \colon q \to x$ в категорії $C$, для якого $\gamma \pi = \alpha$ -- тобто такий морфізм, що діаграма нижче комутується:
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+& & x \\
+a \arrow[r, shift left, "\lambda_1"] \arrow[r, shift right, "\lambda_2" {yshift=-10pt}] & b \arrow[ru,"\beta"] \arrow[rd,"\pi"] & \\
+& & q \arrow[uu, swap, "\exists! \gamma"]
+\end{tikzcd}
+\end{figure}
+\end{definition}
 
 \end{document}
