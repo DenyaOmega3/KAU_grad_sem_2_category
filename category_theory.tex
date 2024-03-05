@@ -737,8 +737,12 @@ p \arrow[ru,"\imath"] & &
 
 \begin{example}
 Розглянемо категорію $\Set$. Нехай $\lambda_1,\lambda_2 \colon A \to B$ -- два відображення. Покладемо $P = \{a \in A \mid \lambda_1(a) = \lambda_2(a)\}$ та $\imath \colon P \to A$ -- вкладення. Тоді $\lambda_1 \imath = \lambda_2 \imath$ (тобто звідси $(P,\imath)$ буде об'єктом категорії $\textbf{D}_{\text{eq}}$, який був зазначений вище). Стверджується, що $(P,\imath)$ -- зрівнальник $\lambda_1,\lambda_2$.\\
-Нехай $(X,\alpha)$ -- довільний об'єкт категорії $\textbf{D}_{\text{eq}}$. Для кожного $x \in X$ ми маємо $\lambda_1(\alpha(x)) = \lambda_1 \alpha (x) = \lambda_2 \alpha(x) = \lambda_2(\alpha(x))$, тобто $\Im \alpha \subset P$. Оберемо відображення $\gamma \colon X \to P$ так, що $\gamma = \alpha$ на $\Im \alpha$. Тоді звідси $\imath \gamma = \alpha$, тобто $\gamma$ -- морфізм між об'єктами $(X,\alpha) \to (P,\imath)$.\\
+Нехай $(X,\alpha)$ -- довільний об'єкт категорії $\textbf{D}_{\text{eq}}$. Для кожного $x \in X$ ми маємо $\lambda_1(\alpha(x)) = \lambda_1 \alpha (x) = \lambda_2 \alpha(x) = \lambda_2(\alpha(x))$, тобто $\Im \alpha \subset P$. Оберемо відображення $\gamma \colon X \to P$ так, що $\gamma = \alpha$. Тоді звідси $\imath \gamma = \alpha$, тобто $\gamma$ -- морфізм між об'єктами $(X,\alpha) \to (P,\imath)$.\\
 Оскільки $\imath$ -- ін'єктивний (як вкладення), то тоді це мономорфізм. Отже, $\gamma$ -- єдиний такий морфізм.
+\end{example}
+
+\begin{example}
+Розглянемо категорію $\Top$. Нехай $\lambda_1, \lambda_2 \colon A \to B$ -- неперервні відображення. Визначимо $P, \imath$ так само, як в попередньому прикладі (оскільки $P \subset A$, то можна визначити топологічний підпростір). Таким чином, $\imath$ уже буде неперервним. Далі так само доводимо, що $(P,\imath)$ -- зрівнальник $\lambda_1,\lambda_2$.
 \end{example}
 
 \end{document}
