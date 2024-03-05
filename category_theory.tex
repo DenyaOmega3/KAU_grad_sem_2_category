@@ -690,4 +690,49 @@ $\gamma \circ \imath_i(x) = \gamma((x,i)) = \alpha_i(x)$.\\
 Будемо в категорії $\Top$. Як і в категорії $\Set$, розглянемо сім'ю множин $\{X_i, i \in I\}$ (тільки тут вже топологічні простори). Визначимо множину $Q$ так само, як було вище. На ній задається така топологія: $U$ -- відкрита в $Q$ $\iff$ $\imath_i^{-1}(U)$ -- відкрита в $X_i$ для всіх $i$. Тоді всі функції $\imath_i \colon X_i \to Q$, як було визначено вище, будуть неперервними. Далі аналогічним чином доводимо, що пара $(Q,\{\imath_i\})$ утворює кодобуток.
 \end{example}
 
+%TODO додати приклади кодобутків на решту категорій
+
+\subsection{Зрівняльник}
+\begin{definition}
+Задано $C$ -- категорія та $\lambda_1,\lambda_2 \colon a \to b$ -- два морфізми.
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+a \arrow[r, shift left, "\lambda_1"] \arrow[r, shift right, "\lambda_2" {yshift=-10pt}] & b
+\end{tikzcd}
+\end{figure}
+\noindent
+Сформуємо категорію $\textbf{D}_{\text{eq}}$ таким чином:\\
+об'єктами будуть пари $(x,\alpha)$, де $x$ -- об'єкт категорії $C$ та $\alpha \colon x \to a$ -- морфізм в $C$, щоб $\lambda_1 \alpha = \lambda_2 \alpha$;
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+x \arrow[r,"\alpha"] & a \arrow[r, shift left, "\lambda_1"] \arrow[r, shift right, "\lambda_2" {yshift=-10pt}] & b
+\end{tikzcd}
+\end{figure}
+\noindent
+морфізмом між об'єктами $(x,\alpha) \to (y,\beta)$ буде морфізм $\gamma \colon x \to y$ категорії $C$, для якого $\beta \gamma = \alpha$;
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+x \arrow[rd,"\alpha"] \arrow[dd, swap, "\gamma"] & & \\
+& a \arrow[r, shift left, "\lambda_1"] \arrow[r, shift right, "\lambda_2" {yshift=-10pt}] & b \\
+y \arrow[ru,"\beta"] & &
+\end{tikzcd}
+\end{figure}
+\noindent
+композицією морфізмів буде просто композиція в категорії $C$.\\
+\textbf{Зрівняльником} (або \textbf{equalizer}) $\lambda_1,\lambda_2$ будемо називати термінальни об'єкт категорії $\textbf{D}_{\text{eq}}$.
+\bigskip \\
+Позначимо термінальний об'єкт за $(p,\imath)$. Тоді за означенням термінальності, для кожного об'єкта $(x,\alpha)$ існує єдиний морфізм між $(x,\alpha)$ та $(p,\imath)$. Тобто це означає, що існує єдиний морфізм $\gamma \colon x \to p$ в категорії $C$, для якого $\imath \gamma = \alpha$ -- тобто такий морфізм, що діаграма нижче комутується:
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+x \arrow[rd,"\alpha"] \arrow[dd, swap, "\exists! \gamma"] & & \\
+& a \arrow[r, shift left, "\lambda_1"] \arrow[r, shift right, "\lambda_2" {yshift=-10pt}] & b \\
+p \arrow[ru,"\imath"] & &
+\end{tikzcd}
+\end{figure}
+\end{definition}
+
 \end{document}
