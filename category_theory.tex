@@ -751,4 +751,24 @@ p \arrow[ru,"\imath"] & &
 Аналогічно для категорій $\Rng, {}_R\Mod$.
 \end{example}
 
+\begin{proposition}
+Задано $C$ -- категорія та $\lambda_1, \lambda_2 \colon a \to b$ -- два морфізми. Припустимо, що $(p,\imath)$ -- зрівняльник $\lambda_1,\lambda_2$. Тоді $\imath$ -- мономорфізм.
+\end{proposition}
+
+\begin{proof}
+Нехай $\beta_1,\beta_2 \colon x \to p$ -- морфізми категорії $C$, для яких $\imath \beta_1 = \imath \beta_2$. Для зручності позначу $\imath \beta_1 = \alpha$.\\
+Оскільки $(p,\imath)$ -- об'єкт категорії $\textbf{D}_{\text{eq}}$, ми маємо наступне:\\
+$\lambda_1 \alpha = (\lambda_1 \imath) \beta_1 = (\lambda_2 \imath) \beta_1 = \lambda_2 \alpha$.\\
+Отже, $(x,\alpha)$ -- також об'єкт категорії $\textbf{D}_{\text{eq}}$.
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+x \arrow[rd,"\alpha"] \arrow[dd, shift left, swap, "\beta_1" {xshift=14pt}] \arrow[dd, shift right, swap, "\beta_2"] & & \\
+& a \arrow[r, shift left, "\lambda_1"] \arrow[r, shift right, "\lambda_2" {yshift=-10pt}] & b \\
+p \arrow[ru,"\imath"] & &
+\end{tikzcd}
+\end{figure}
+\noindent За початковими припущеннями, $\imath \beta_1 = \alpha$, $\imath \beta_2 = \alpha$. Але за єдиністю відображення з такими властивостями (зважаючи на означення зрівняльника), $\beta_1 = \beta_2$. Звідси $\imath$ -- мономорфізм.
+\end{proof}
+
 \end{document}
