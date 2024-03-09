@@ -886,4 +886,106 @@ $\gamma'(x) = (\sigma_1 \gamma'(x), \sigma_2 \gamma'(x)) = (\alpha_1(x),\alpha_2
 \bigskip \\
 Абсолютно аналогічно можна сказати про $\Rng, {}_R \Mod$.
 \end{example}
+
+\begin{theorem}
+Задано $C$ -- категорія.\\
+Існують зрівняльники та скінченні добутки в $C \iff$ існують пулбеки та термінальний об'єкт категорії $C$.
+\end{theorem}
+
+\begin{proof}
+\rightproof Дано: існують зрівняльники та скінченні добутки в $C$.\\
+Добуток порожньої сім'ї об'єктів уже автоматично термінальний (TODO: обдумати).\\
+Залишилося показати існування пулбеку. Нехай $\lambda_i \colon a_i \to b$ -- два морфізми категорії $C$. За нашими умовами, існує добуток $(a_1 \times a_2, \{\pi_i\})$ сім'ї $\{a_1,a_2\}$, тобто існує термінальний об'єкт категорії $\textbf{D}_{\text{pr}}$. Тобто у нас є одна діаграма:
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+& \arrow[ldd, bend right=45, swap, "\alpha_1"] x \arrow[d,dashed,"\delta"] \arrow[rdd, bend right=-45, "\alpha_2"] & \\
+& \arrow[dl, "\pi_1"] a_1 \times a_2 \arrow[dr, swap, "\pi_2"] & \\
+a_1 & & a_2 
+\end{tikzcd}
+\caption*{Хто такий об'єкт $x$ та звідки морфізми $\alpha_1,\alpha_2$, буде ясно пізніше.}
+\end{figure}
+\noindent
+Також за умовою, існує зрівняльник для морфізмів $\lambda_1 \pi_1,\ \lambda_2 \pi_2$. Тобто у нас є друга діаграма:
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+x \arrow[rd,"\delta"] \arrow[dd, dashed, swap, "\exists! \gamma"] & & \\
+& a_1 \times a_2 \arrow[r, shift left, "\lambda_1 \pi_1"] \arrow[r, shift right, "\lambda_2 \pi_2" {yshift=-10pt}] & b \\
+p \arrow[ru,"\imath"] & &
+\end{tikzcd}
+\caption*{Морфізм $\delta$ ми взяли з попередньої діаграми, а про об'єкт $x$ та морфізм $\gamma$ буде згодом.}
+\end{figure}
+\noindent Покладемо $\sigma_i = \pi_i \imath$. Зауважимо, що $\lambda_1 \sigma_1 = \lambda_1 \pi_1 \imath = \lambda_2 \pi_2 \imath = \lambda_2 \sigma_2$. Таким чином, $(p,(\sigma_1,\sigma_2))$ -- об'єкт категорії $\textbf{D}_{\text{pb}}$. Залишилося показати, що це -- термінальний -- і таким чином ми отримаємо пулбек.\\ 
+Нехай $(x,(\alpha_1,\alpha_2))$ -- об'єкт категорії $\textbf{D}_{\text{pb}}$ (тепер з об'єктом $x$ та морфізмами $\alpha_1,\alpha_2$ на діаграмі стало ясніше). Тобто уже маємо $\lambda_1 \alpha_1 = \lambda_2 \alpha_2$. Ми також маємо $\lambda_1 \pi_1 \delta = \lambda_1 \alpha_1 = \lambda_2 \alpha_2 = \lambda_2 \pi_2 \delta$, тож звідси $(x,\delta) \in \textbf{D}_{\text{eq}}$. Тоді за зрівняльником, існує морфізм $\gamma \colon x \to p$, для якого $\imath \gamma = \delta$ (тепер з морфізмом $\gamma$ стало ясніше).\\
+Зауважимо, що $\sigma_i \gamma = \pi_i \imath \gamma = \pi_i \delta = \alpha_i, i = 1,2$, тобто звідси $\gamma$ -- це морфізм в $\textbf{D}_{\text{pb}}$ між об'єктами $(x,(\alpha_1,\alpha_2))$ та $(p,(\sigma_1,\sigma_2))$.\\
+Припустимо, що $\gamma'$ -- ще один такий же морфізм. Тоді $\pi_i \imath \gamma' = \sigma_i \gamma' = \alpha_i$ та аналогічно $\pi \imath \gamma = \alpha_i$. Але за єдиністю в добутку, $\imath \gamma' = \imath \gamma$. Оскільки $\imath$ -- мономорфізм, то звідси $\gamma' = \gamma$.
+\bigskip \\
+\leftproof Дано: існують пулбеки та термінальний об'єкт категорії $C$.\\
+Позначимо $t$ за термінальний об'єкт $C$. Хочемо довести, що існує скінченний добуток в $C$; а для цього буде достатньо лише довести, що для сім'ї $\{a_1,a_2\}$ (тобто лише для двох об'єктів) існує добуток (TODO: додати пояснення).\\
+Оскільки $t$ -- термінальний, то існують єдині морфізми $\lambda_i \colon a_i \to t, i = 1,2$ в категорії $C$. За умовою, існує пулбек для пари $(\lambda_1,\lambda_2)$, тобто в категорії $\textbf{D}_{\text{pb}}$ існує термінальний об'єкт $(p,(\pi_1,\pi_2))$ (те, що $\pi_i$ -- це проєкція, на даному етапі це невідомо, але скоро своє позначення виправдає). У нас вже є перша діаграма:
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+x \arrow[rrd, bend left=20, "\alpha_2"] \arrow[ddr, bend right = 20, swap, "\alpha_1"] \arrow[dr, dashed, "\exists ! \gamma"] & & & \\
+& p \arrow[r,"\pi_2"] \arrow[d,"\pi_1"] & a_2 \arrow[d,"\lambda_2"] \\
+& a_1 \arrow[r, "\lambda_1"] & t
+\end{tikzcd}
+\caption*{Хто такий об'єкт $x$ та морфізм $\gamma$, стане зараз ясно.}
+\end{figure}
+\noindent Ми тепер хочемо довести, що $(p,\{\pi_i\})$ утворює добуток сім'ї $\{a_1,a_2\}$. Тобто хочемо таку діаграму:
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+& \arrow[ldd, bend right=45, swap, "\alpha_1"] x \arrow[d,dashed,"\gamma"] \arrow[rdd, bend right=-45, "\alpha_2"] & \\
+& \arrow[dl, "\pi_1"] p \arrow[dr, swap, "\pi_2"] & \\
+a_1 & & a_2 
+\end{tikzcd}
+\caption*{Знову ж таки, хто такий $x$ та морфізм $\gamma$, стане скоро ясно.}
+\end{figure}
+\noindent Нехай $(x,\{\alpha_i\})$ -- об'єкт категорії $\textbf{D}_{\text{pr}}$ (тепер за $x$ стало ясно на діаграмах). Тоді зауважимо, що $\lambda_i \alpha_i \colon x \to t, i = 1,2$ -- два морфізми в термінальний об'єкт, тож за єдиністю, $\lambda_1 \alpha_1 = \lambda_2 \alpha_2$. Але це означає, що пара $(x,(\alpha_1,\alpha_2))$ буде об'єктом категорії $\textbf{D}_{\text{pb}}$, тоді за термінальністю $\textbf{D}_{\text{pb}}$, існує єдиний морфізм $\gamma \colon x \to p$ категорії $C$, для якої $\pi_i \gamma = \alpha_i$ (тепер і про $\gamma$ стало ясно на діаграмах). Власне, це й доводить існування добутку.
+\bigskip \\
+Залишилося довести, що існують зрівняльники в $C$. Нехай $\lambda_i \colon a \to b$ -- два морфізми категорії $C$.
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+a \arrow[r, shift left, "\lambda_1"] \arrow[r, shift right, "\lambda_2" {yshift=-10pt}] & b
+\end{tikzcd}
+\end{figure}
+\noindent
+Ми вже знаємо вище, що існує $(a \times b, \{\pi_i\})$ -- добуток сім'ї $\{a,b\}$. Двіча застосуємо означення добутку -- отримаємо морфізми $\lambda_1', \lambda_2' \colon a \to a \times b$, для яких справедливі:\\
+$\pi \lambda_1' = 1_a \qquad \pi_1 \lambda_2' = 1_a \qquad \pi_1 \lambda_1' = \lambda_1 \qquad \pi_2 \lambda_2' = \lambda_2$ \qquad (*).
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+& \arrow[ldd, bend right=45, swap, "1_a"] a \arrow[d,dashed,"\lambda_1'"] \arrow[rdd, bend right=-45, "\lambda_1"] & \\
+& \arrow[dl, "\pi_1"] a \times b \arrow[dr, swap, "\pi_2"] & \\
+a & & b
+\end{tikzcd}
+\qquad
+\begin{tikzcd}
+& \arrow[ldd, bend right=45, swap, "1_a"] a \arrow[d,dashed,"\lambda_2'"] \arrow[rdd, bend right=-45, "\lambda_2"] & \\
+& \arrow[dl, "\pi_1"] a \times b \arrow[dr, swap, "\pi_2"] & \\
+a & & b
+\end{tikzcd}
+\end{figure}
+\noindent
+За припущенням, існує пулбек для $(\lambda_1',\lambda_2')$, тобто існує термінальний об'єкт $(p,(\sigma_1,\sigma_2))$ категорії $\textbf{D}_{\text{pb}}$. Використовуючи перші дві рівності в (*), отримаємо:\\
+$\sigma_1 = 1_a \sigma_1 = \pi_1 \lambda_1' \sigma_1 = \pi_1 \lambda_2' \sigma_2 = 1_a \sigma_2 = \sigma_2$.\\
+Для зручності позначимо $\imath = \sigma_1 = \sigma_2$. За останніми двома рівностями в (*),\\
+$\lambda_1 \imath = \pi_2 \lambda_1' \sigma_1 = \pi_2 \lambda_2' \sigma_2 = \lambda_2 \imath$.\\
+Таким чином, отримали, що $(p,\imath)$ -- об'єкт $\textbf{D}_{\text{eq}}$. Хочемо довести, що $(p,\imath)$ буде зрівняльником $\lambda_1,\lambda_2$, тобто хочемо таку діаграму:
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+x \arrow[rd,"\alpha"] \arrow[dd, swap, "\gamma"] & & \\
+& a \arrow[r, shift left, "\lambda_1"] \arrow[r, shift right, "\lambda_2" {yshift=-10pt}] & b \\
+p \arrow[ru,"\imath"] & &
+\end{tikzcd}
+\end{figure}
+\noindent
+Нехай $(x,\alpha) \in \textbf{D}_{\text{eq}}$. Зокрема звідси $\lambda_1 \alpha = \lambda_2 \alpha \overset{\text{позн.}}{=} \beta$. Зауважимо, що $\lambda_i' \alpha, i = 1,2$ -- морфізми із $(x,(\alpha,\beta))$ в $(a \times \beta, (\pi_1,\pi_2))$. Справді,\\
+$\pi_1 \lambda_i' \alpha = 1_a \alpha = \alpha \qquad \pi_2 \lambda_i' \alpha = \lambda_i \alpha = \beta$.\\
+Оскільки другий об'єкт -- термінальний, то за єдиністю, $\lambda_1' \alpha = \lambda_2' \alpha$, а звідси $(x,\alpha,\alpha) \in \textbf{D}_{\text{pb}}$. Отже, звідси існує єдиний морфізм $\gamma \colon x \to p$, для якого $\sigma_i \gamma = \alpha \iff \imath \gamma = \alpha$. Остання рівність закінчує доведення за існування зрівняльника.
+\end{proof}
 \end{document}
