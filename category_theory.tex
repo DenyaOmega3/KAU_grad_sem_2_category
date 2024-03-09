@@ -821,4 +821,59 @@ a \arrow[r, shift left, "\lambda_1"] \arrow[r, shift right, "\lambda_2" {yshift=
 \textit{Насправді, доведення є аналогічним, коли мова була про зрівняльник $\implies$ мономорфізм.}
 \end{proposition}
 
+\subsection{Пулбек}
+\begin{definition}
+Задано $C$ -- категорія та $\lambda_1 \colon a_1 \to b,\ \lambda_2 \colon c_2 \to b$ -- морфізми.
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+& a_2 \arrow[d,"\lambda_2"] \\
+a_1 \arrow[r, "\lambda_1"] & b
+\end{tikzcd}
+\end{figure}
+\noindent
+Сконструюємо категорію $\textbf{D}_{\text{pb}}$ ось таким чином:\\
+об'єктами будуть пари $(x,(\alpha_1,\alpha_2))$, де $x$ -- об'єкт категорії $C$ та $\alpha_1 \colon x \to a_1,\ \alpha_2 \colon x \to a_2$ -- два морізми категорії $C$, для яких $\lambda \alpha_1 = \lambda_2 \alpha_2$;
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+x \arrow[red,r,"\alpha_2"] \arrow[red,d,"\alpha_1"] & a_2 \arrow[d,"\lambda_2"] \\
+a_1 \arrow[r, "\lambda_1"] & b
+\end{tikzcd}
+\end{figure}
+\noindent
+морфізмами між об'єктами $(x,(\alpha_1,\alpha_2))$ та $(y,(\beta_1,\beta_2))$ будуть всі морфізми $\gamma \colon x \to y$ категорії $C$, для яких $\beta_1 \gamma = \alpha_1,\ \beta_2 \gamma = \alpha_2$;
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+x \arrow[rrd, bend left=20, "\alpha_2"] \arrow[ddr, bend right = 20, swap, "\alpha_1"] \arrow[red, dr, "\gamma"] & & & \\
+& y \arrow[r,"\beta_2"] \arrow[d,"\beta_1"] & a_2 \arrow[d,"\lambda_2"] \\
+& a_1 \arrow[r, "\lambda_1"] & b
+\end{tikzcd}
+\end{figure}
+\noindent
+композицією морфізмів буде композиція, як в категорії $C$.\\
+\textbf{Пулбеком} пари морфізмів $(\lambda_1,\lambda_2)$ будемо називати термінальний об'єкт категорії $\textbf{D}_{\text{pb}}$.
+\end{definition}
+\noindent
+Позначимо термінальний об'єкт за $(p,(\sigma_1,\sigma_2))$. Тоді за означенням термінальності, для кожного об'єкта $(x,(\alpha_1,\alpha_2))$ існує єдиний морфізм між $(x,(\alpha_1,\alpha_2))$ та $(p,(\sigma_1,\sigma_2))$. Тобто це означає, що існує єдиний морфізм $\gamma \colon x \to p$ в категорії $C$, для якого $\sigma_1 \gamma = \alpha_1,\ \sigma_2 \gamma = \alpha_2$. 
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+x \arrow[rrd, bend left=20, "\alpha_2"] \arrow[ddr, bend right = 20, swap, "\alpha_1"] \arrow[dr, dashed, "\exists ! \gamma"] & & & \\
+& p \arrow[r,"\sigma_2"] \arrow[d,"\sigma_1"] & a_2 \arrow[d,"\lambda_2"] \\
+& a_1 \arrow[r, "\lambda_1"] & b
+\end{tikzcd}
+\end{figure}
+
+\begin{example}
+Розглянемо категорію $\Set$. Нехай $\lambda_i \colon A_i \to B (i = 1,2)$ будуть дві функції. Визначимо $A_1 \times_B A_2 = \{(a_1,a_2) \mid a_i \in A_i, i = 1,2, \lambda(a_1) = \lambda(a_2)\} \subset A_1 \times A_2$. Така множина називається \textbf{розшарованим добутком} $\lambda_1,\lambda_2$. \\
+Покладемо $P = A_1 \times_B A_2$ та визначимо $\sigma_i \colon P \to A_i$ таким чином: $\sigma_i((a_1,a_2)) = a_i, i = 1,2$. Зауважимо, що $\lambda_1 \sigma_1 = \lambda_2 \sigma_2$. Дійсно, для $a = (a_1,a_2) \in P$ маємо наступне:\\
+$\lambda_1 \sigma_1(a) = \lambda_1(a_1) = \lambda_2(a_2) = \lambda_2 \sigma_2(a)$.\\
+Отже, $(P,(\sigma_1,\sigma_2))$ -- об'єкт допоміжної категорії $\textbf{D}_{\text{pb}}$. Я стверджую, що цей об'єкт буде пулбеком пари $(\lambda_1,\lambda_2)$.\\
+Нехай $(X,(\alpha_1,\alpha_2))$ -- об'єкт категорії $\textbf{D}_{\text{pb}}$. Визначимо $\gamma \colon X \to P$ таким чином $\gamma(x) = (\alpha_1(x),\alpha_2(x))$. Зауважимо, що $(\alpha_1(x),\alpha_2(x)) \overset{\text{дійсно}}{\in} P$, оскільки $\lambda_1(\alpha_1(x)) = \lambda_2(\alpha_2(x))$ (в силу обраного об'єкта з $\textbf{D}_{\text{pb}}$). Також зазначимо, що $\sigma_i \gamma = \alpha_i, i = 1,2$, тому це формує морфізм між $(X,(\alpha_1,\alpha_2))$ та $(P,(\sigma_1,\sigma_2))$. Залишилося довести єдиність.\\
+Нехай $\gamma'$ -- інший морфізм між $(X,(\alpha_1,\alpha_2))$ та $(P,(\sigma_1,\sigma_2))$.\\
+$\gamma'(x) = (\sigma_1 \gamma'(x), \sigma_2 \gamma'(x)) = (\alpha_1(x),\alpha_2(x)) = \gamma(x)$.\\
+Тобто $\gamma' = \gamma$, що доводить єдиність морфізма.
+\end{example}
 \end{document}
