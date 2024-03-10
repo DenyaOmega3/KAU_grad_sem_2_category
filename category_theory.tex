@@ -599,26 +599,41 @@ $\alpha(x) = \alpha(\beta(y)) = \alpha \beta(y) = 1_Y(y) = y$.
 
 \subsection{Добуток}
 \begin{definition}
-Задано $C$ -- категорія та $X_1,X_2 \in C$ -- об'єкти.\\
-\textbf{Добутком $X_1,X_2$} називають об'єкт $X \in C$, що оснащений парою морфізмів $\pi_1 \colon X \to X_1$ та $\pi_2 \colon X \to X_2$, що є так званими \textbf{проєктивними морфізмами}, які задовольняють такій умові:
-\begin{align*}
-\forall Y \in C, \forall f_1 \colon Y \to X_1, f_2 \colon Y \to X_2: \exists ! f \colon Y \to X: \\
-f_1 = \pi_1 f \qquad f_2 = \pi_2 f
-\end{align*}
-Позначення: $X = X_1 \times X_2$.
+Задано $C$ -- категорія та $\{c_1,c_2\}$ -- сім'я об'єктів $C$. Сформуємо категорію $\textbf{D}_{\text{pr}}$ таким чином:\\
+об'єктами будуть пари $(x,\{\alpha_1,\alpha_2\})$, де $x$ -- об'єкт в $C$ та $\alpha_1 \colon x \to c_1, \alpha_2 \colon x \to c_2$ -- морфізми в $C$;
 \begin{figure}[H]
 \centering
 \begin{tikzcd}
-& \arrow[ldd, bend right=45, swap, "f_1"] Y \arrow[d,dashed,"f"] \arrow[rdd, bend right=-45, "f_2"] & \\
-& \arrow[dl, "\pi_1"] X_1 \times X_2 \arrow[dr, swap, "\pi_2"] & \\
-X_1 & & X_2 
+& \arrow[ld,red,"\alpha_1"] x \arrow[rd,red,swap,"\alpha_2"] & \\
+c_1 & & c_2
 \end{tikzcd}
 \end{figure}
+\noindent морфізмом між об'єктами $(x,\{\alpha_1,\alpha_2\}) \to (y,\{\beta_1,\beta_2\})$ буде морфізм $\gamma \colon x \to y$, для якого $\beta_1 \gamma = \alpha_1,\ \beta_2 \gamma = \alpha_2$;
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+& \arrow[rdd,bend right = -45, "\beta_1"] y \arrow[d,red,"\gamma"] \arrow[ldd,bend right = 45, swap, "\beta_2"] & \\
+& \arrow[ld,"\alpha_1"] x \arrow[rd,swap,"\alpha_2"] & \\
+c_1 & & c_2
+\end{tikzcd}
+\end{figure}
+\noindent композицією морфізмів буде композиція, як в категорії $C$.\\
+\textbf{Добутком} сім'ї $\{c_1,c_2\}$ називають термінальний об'єкт категорії $\textbf{D}_{\text{pr}}$.
 \end{definition}
 
+\noindent Позначимо термінальний об'єкт за $(p,\{\pi_1,\pi_2\})$. Тоді за означенням термінальності, для кожного об'єкта $(x,\{\alpha_1,\alpha_2\})$ існує єдиний морфізм між $(x,\{\alpha_1,\alpha_2\})$ та $(p,\{\pi_1,\pi_2\})$. Тобто це означає, що існує єдиний морфізм $\gamma \colon x \to p$ в категорії $C$, для якого $\pi_1 \gamma = \alpha_1,\ \pi_2 \gamma = \alpha_2$.
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+& \arrow[rdd,bend right = -45, "\alpha_1"] x \arrow[d,red,"\gamma"] \arrow[ldd,bend right = 45, swap, "\alpha_2"] & \\
+& \arrow[ld,"\pi_1"] p \arrow[rd,swap,"\pi_2"] & \\
+c_1 & & c_2
+\end{tikzcd}
+\end{figure}
+\noindent  Використовується позначення $p = c_1 \times c_2$; морфізми $\pi_1 \colon c_1 \times c_2 \to c_1,\ \pi_2 \colon c_1 \times c_2 \to c_2$ називаються \textbf{проєктивними морфізмами}.
+
 \begin{remark}
-Аналогічним чином можна визначити в категорії $C$ \textbf{добуток $X_i, i \in I$} (деякої сім'ї об'єктів).\\
-Позначення $X = \displaystyle\prod_{i \in I} X_i$.
+Аналогічним чином можна визначити в категорії $C$ добуток деякої сім'ї об'єктів $\{c_i, i \in I\}$. Позначення: $p = \displaystyle\prod_{i \in I} c_i$.
 \end{remark}
 
 \begin{example}
