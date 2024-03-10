@@ -637,7 +637,7 @@ c_1 & & c_2
 \end{remark}
 
 \begin{example}
-Будемо в категорії $\Set$. Розглянемо сім'ю множин $\{X_i,i \in I\}$. Добутком цієї сім'ї множин є множина всіх функцій $f \colon I \to \displaystyle\bigcup_{i \in I} X_i$ таких, що $f(i) \in X_i$ для всіх $i \in I$. Це можна записати таким чином:
+Розглянемо категорію $\Set$. Розглянемо сім'ю множин $\{X_i,i \in I\}$. Добутком цієї сім'ї множин є множина всіх функцій $f \colon I \to \displaystyle\bigcup_{i \in I} X_i$ таких, що $f(i) \in X_i$ для всіх $i \in I$. Це можна записати таким чином:
 \begin{align*}
 P = \prod_{i \in I} X_i = \left\{ f \colon I \to \bigcup_{i \in I} X_i \mid f(i) \in X_i, \forall i \in I \right\}
 \end{align*}
@@ -647,12 +647,11 @@ P = \prod_{i \in I} X_i = \left\{ f \colon I \to \bigcup_{i \in I} X_i \mid f(i)
 
 \begin{proof}
 Нехай $Y$ -- об'єкт з морфізмами $\alpha_i \colon Y \to X_i$. Хочемо знайти єдиний морфізм $\gamma \colon Y \to P$, щоб $\alpha_i = \pi_i \gamma$. Покладемо $\gamma \colon Y \to P$ таким чином: $\forall y \in Y: \gamma(y)$ буде функцією $I \to \displaystyle\bigcup_{i \in I} X_i$, причому $\forall i \in I: \gamma(y)_i = \alpha_i(y)$. Тоді $\pi_i \gamma(y) = \pi_i(\gamma(y)) = \gamma(y)_i = \alpha_i(y)$, тобто звідси $\pi_i \gamma = \alpha_i$ для всіх $i \in I$.\\
-!Припустимо, що існує функція $\gamma' \colon Y \to P$, для якої $\pi_i \gamma' = \alpha_i$. Тобто для кожного $y \in Y$ та кожного $i \in I$ виконано $\gamma'(y)(i) = \alpha_i(x)$. Але тоді\\
-$\gamma'(y)(i) = \pi_i(\gamma'(y)) = \pi_i \gamma'(y) = \alpha_i(y) = \gamma(y)(i)$. Суперечність!
+!Припустимо, що існує функція $\gamma' \colon Y \to P$, для якої $\pi_i \gamma' = \alpha_i$. Тобто для кожного $y \in Y$ та кожного $i \in I$ виконано $\gamma'(y)(i) = \alpha_i(x)$. Але тоді $\gamma'(y)(i) = \pi_i(\gamma'(y)) = \pi_i \gamma'(y) = \alpha_i(y) = \gamma(y)(i)$. Суперечність!
 \end{proof}
 
 \begin{example}
-Будемо в категорії $\Grp$. Насправді, все так само робиться, як в категорії $\Set$, ось тільки кожний $X_i$ тепер буде групою. Визначаємо декартів добуток $P$ -- це буде група зі покомпонентним множенням: $(fg)(i) = f(i)g(i)$. Це ще називають \textbf{(зовнішнім) прямим добутком груп}. Проєктивні відображення $\pi_i$ будуть гомоморфізмами. Далі все те саме.
+Розглянемо категорію $\Grp$. Насправді, все так само робиться, як в категорії $\Set$, ось тільки кожний $X_i$ тепер буде групою. Визначаємо декартів добуток $P$ -- це буде група зі покомпонентним множенням: $(fg)(i) = f(i)g(i)$. Це ще називають \textbf{(зовнішнім) прямим добутком груп}. Проєктивні відображення $\pi_i$ будуть гомоморфізмами. Далі все те саме.
 \bigskip \\
 Для категорій $\Rng, {}_R \Mod$ аналогічно все.
 \end{example}
