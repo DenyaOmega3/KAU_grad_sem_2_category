@@ -988,4 +988,50 @@ p \arrow[ru,"\imath"] & &
 $\pi_1 \lambda_i' \alpha = 1_a \alpha = \alpha \qquad \pi_2 \lambda_i' \alpha = \lambda_i \alpha = \beta$.\\
 Оскільки другий об'єкт -- термінальний, то за єдиністю, $\lambda_1' \alpha = \lambda_2' \alpha$, а звідси $(x,\alpha,\alpha) \in \textbf{D}_{\text{pb}}$. Отже, звідси існує єдиний морфізм $\gamma \colon x \to p$, для якого $\sigma_i \gamma = \alpha \iff \imath \gamma = \alpha$. Остання рівність закінчує доведення за існування зрівняльника.
 \end{proof}
+
+\subsection{Пушаут}
+\begin{definition}
+Задано $C$ -- категорія та $\lambda_1 \colon a \to b_1,\ \lambda_2 \colon a \to b_2$ -- морфізми.
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+a \arrow[d, "\lambda_1"] \arrow[r,"\lambda_2"] & b_2 \\
+b_1 &
+\end{tikzcd}
+\end{figure}
+\noindent
+Сконструюємо категорію $\textbf{D}_{\text{po}}$ ось таким чином:\\
+об'єктами будуть пари $(x,(\alpha_1,\alpha_2))$, де $x$ -- об'єкт категорії $C$ та $\alpha_1 \colon b_1 \to x,\ \alpha_2 \colon b_2 \to x$ -- два морізми категорії $C$, для яких $\alpha_1 \lambda_1 = \alpha_2 \lambda_2$;
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+a \arrow[d, "\lambda_1"] \arrow[r,"\lambda_2"] & b_2 \arrow[d,red,"\alpha_2"] \\
+b_1 \arrow[r,red,"\alpha_1"] & x
+\end{tikzcd}
+\end{figure}
+\noindent
+морфізмами між об'єктами $(x,(\alpha_1,\alpha_2))$ та $(y,(\beta_1,\beta_2))$ будуть всі морфізми $\gamma \colon x \to y$ категорії $C$, для яких $\gamma \alpha_1 = \beta_1,\ \gamma \alpha_2 = \beta_2$;
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+a \arrow[d, "\lambda_1"] \arrow[r,"\lambda_2"] & b_2 \arrow[rdd, bend left = 20, "\beta_2"] \arrow[d,"\alpha_2"] & \\
+b_1 \arrow[rrd, bend right = 20, "\beta_1"] \arrow[r,"\alpha_1"] & x \arrow[dr,red,"\gamma"] & \\
+& & y
+\end{tikzcd}
+\end{figure}
+\noindent
+композицією морфізмів буде композиція, як в категорії $C$.\\
+\textbf{Пушаутом} пари морфізмів $(\lambda_1,\lambda_2)$ будемо називати ініціальний об'єкт категорії $\textbf{D}_{\text{pb}}$.
+\end{definition}
+\noindent
+Позначимо ініціальний об'єкт за $(q,(\tau_1,\tau_2))$. Тоді за означенням ініціальності, для кожного об'єкта $(x,(\alpha_1,\alpha_2))$ існує єдиний морфізм між $(q,(\tau_1,\tau_2))$ та $(x,(\alpha_1,\alpha_2))$. Тобто це означає, що існує єдиний морфізм $\gamma \colon q \to x$ в категорії $C$, для якого $\gamma  \tau_1 = \alpha_1,\ \gamma \tau_2 = \alpha_2$. 
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+a \arrow[d, "\lambda_1"] \arrow[r,"\lambda_2"] & b_2 \arrow[rdd, bend left = 20, "\alpha_2"] \arrow[d,"\tau_2"] & \\
+b_1 \arrow[rrd, bend right = 20, "\alpha_1"] \arrow[r,"\tau_1"] & q \arrow[dr,red,"\gamma"] & \\
+& & x
+\end{tikzcd}
+\end{figure}
+
 \end{document}
