@@ -83,6 +83,7 @@
 \DeclareMathOperator{\Mod}{\textbf{Mod}}
 \DeclareMathOperator{\Met}{\textbf{Met}}
 \DeclareMathOperator{\Mani}{\textbf{Man}}
+\DeclareMathOperator{\Vect}{\textbf{Vect}}
 
 \title{Теорія категорії \\ І курс магістратура, 2 семестр}
     	
@@ -714,8 +715,27 @@ c_1 \arrow[ruu,bend left = 45, "\alpha_1"] \arrow[ru,"\imath_1"] & & c_2 \arrow[
 \end{proof}
 
 \begin{example}
-Будемо в категорії $\Top$. Як і в категорії $\Set$, розглянемо сім'ю множин $\{X_i, i \in I\}$ (тільки тут вже топологічні простори). Визначимо множину $Q$ так само, як було вище. На ній задається така топологія: $U$ -- відкрита в $Q$ $\iff$ $\imath_i^{-1}(U)$ -- відкрита в $X_i$ для всіх $i$. Тоді всі функції $\imath_i \colon X_i \to Q$, як було визначено вище, будуть неперервними. Далі аналогічним чином доводимо, що пара $(Q,\{\imath_i\})$ утворює кодобуток.
+Розглянемо категорію. $\Top$. Як і в категорії $\Set$, розглянемо сім'ю множин $\{X_i, i \in I\}$ (тільки тут вже топологічні простори). Визначимо множину $Q$ так само, як було вище. На ній задається така топологія: $U$ -- відкрита в $Q$ $\iff$ $\imath_i^{-1}(U)$ -- відкрита в $X_i$ для всіх $i$. Тоді всі функції $\imath_i \colon X_i \to Q$, як було визначено вище, будуть неперервними. Далі аналогічним чином доводимо, що пара $(Q,\{\imath_i\})$ утворює кодобуток.
 \end{example}
+
+\begin{example}
+Розглянемо категорію ${}_R \Mod$. Нехай $\{M_i\}$ -- сім'я модулів над кільцем $R$ та позначимо $M = \displaystyle\bigoplus_{i} M_i$, який є підмодулем модуля $\displaystyle\prod_{i} M_i$. Просто тому що
+\begin{align*}
+M = \bigoplus_{i} M_i = \left\{ m \in \prod_{i} M_i \mid m_i \neq 0 \text{ лише для скінченного числа індексів } i \right\}
+\end{align*}
+Визначимо відображення $\imath_i \colon M_i \to M$ таким чином: $\imath_i(m)_j = \delta_{ij}(m)$, де $\delta_{ij}$ -- Кронекер-дельта символ, який повертає $m$ при $i = j$ або $0$ в інакшому випадку. Покажемо, що $(M,\{\imath_i\})$ буде утворювати кодобуток.
+\end{example}
+
+\begin{proof}
+Нехай $(N,\{\alpha_i\})$ -- об'єкт категорії $\textbf{D}_{\text{copr}}$. Визначимо відображення $\gamma \colon M \to N$ таким чином: $\gamma(m) = \displaystyle\sum_i \alpha_i(m_i)$ (це скінченна сума, тому все тут коректно). Неважко пересвідчитися буде, що $\gamma$ задає $R$-лінійне відображення. Також $\gamma \imath_i = \alpha_i$ для всіх $i$. Дійсно,\\
+$\gamma \imath_i(m) = \displaystyle\sum_{j} \alpha_j(\imath_i(m)_j) = \sum_j \alpha_j(\delta_{ij}(m)) = \alpha_i(m)$.\\
+Таким чином, $\gamma$ -- морфізм в $\textbf{D}_{\text{copr}}$.\\
+Припустимо, що $\gamma'$ -- інший морфізм між $(M,\{\imath_i\})$ та $(N,\{\alpha_i\})$. Зафіксуємо $m \in M$. Для всіх $j$ маємо:\\
+$m_j = \displaystyle\sum_i \delta_{ij}(m_i) = \sum_{i} \imath_i(m_i)_j = \left( \sum_{i} \imath_i(m_i) \right)_j \implies m = \sum_i \imath_i(m_i)$.\\
+$\gamma'(m) = \displaystyle\gamma'\left( \sum_i \imath_i(m_i) \right) = \sum_i \gamma' \imath_i(m_i) = \sum_i \alpha_i(m_i) = \gamma(m)$.
+\bigskip \\
+Якщо покласти кільце $R = \mathbb{Z}$, то доведемо, що для категорії $\Ab$ існує кодобуток. Так само якщо покласти кільце $R = F$ -- поле, то доведемо, що для категорії $\Vect_F$ теж існує кодобуток.
+\end{proof}
 
 %TODO додати приклади кодобутків на решту категорій
 
