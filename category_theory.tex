@@ -608,7 +608,7 @@ $\alpha(x) = \alpha(\beta(y)) = \alpha \beta(y) = 1_Y(y) = y$.
 c_1 & & c_2
 \end{tikzcd}
 \end{figure}
-\noindent морфізмом між об'єктами $(x,\{\alpha_1,\alpha_2\}) \to (y,\{\beta_1,\beta_2\})$ буде морфізм $\gamma \colon x \to y$, для якого $\beta_1 \gamma = \alpha_1,\ \beta_2 \gamma = \alpha_2$;
+\noindent морфізмом між об'єктами $(x,\{\alpha_1,\alpha_2\}) \to (y,\{\beta_1,\beta_2\})$ будуть всі морфізми $\gamma \colon x \to y$, для яких $\beta_1 \gamma = \alpha_1,\ \beta_2 \gamma = \alpha_2$;
 \begin{figure}[H]
 \centering
 \begin{tikzcd}
@@ -665,30 +665,45 @@ $\gamma^{-1}(\pi_i^{-1}(U)) = (\pi \gamma)^{-1}(U) = \alpha_i^{-1}(U)$ -- від
 
 \subsection{Кодобуток}
 \begin{definition}
-Задано $C$ -- категорія та $X_1,X_2 \in C$ -- об'єкти.\\
-\textbf{Кодобутком $X_1,X_2$} називають об'єкт $X \in C$, що оснащений парою морфізмів $\imath_1 \colon X_1 \to X$ та $\imath_2 \colon X_2 \to X$, що є так званими \textbf{морфізмами вкладень}, які задовольняють такій умові:
-\begin{align*}
-\forall Y \in C, \forall f_1 \colon X_1 \to Y, f_2 \colon X_2 \to Y: \exists ! f \colon X \to Y: \\
-f_1 = f \imath_1 \qquad f_2 = f \imath_2
-\end{align*}
-Позначення: $X = X_1 \sqcup X_2$.
+Задано $C$ -- категорія та $\{c_1,c_2\}$ -- сім'я об'єктів $C$. Сформуємо категорію $\textbf{D}_{\text{copr}}$ таким чином:\\
+об'єктами будуть пари $(x,\{\alpha_1,\alpha_2\})$, де $x$ -- об'єкт в $C$ та $\alpha_1 \colon c_1 \to x, \alpha_2 \colon c_2 \to x$ -- морфізми в $C$;
 \begin{figure}[H]
 \centering
 \begin{tikzcd}
-& Y & \\
-& X_1 \sqcup X_2 \arrow[u,dashed,"f"] & \\
-\arrow[ruu, bend right=-45, "f_1"] \arrow[ur, swap, "\imath_1"] X_1 & & X_2 \arrow[ul, "\imath_2"] \arrow[luu, bend right=45, swap, "f_2"]
+& x & \\
+c_1 \arrow[ru,red,"\alpha_1"]  & & c_2 \arrow[lu,red,swap,"\alpha_2"] 
 \end{tikzcd}
 \end{figure}
+\noindent морфізмом між об'єктами $(x,\{\alpha_1,\alpha_2\}) \to (y,\{\beta_1,\beta_2\})$ будуть усі морфізми $\gamma \colon x \to y$, для яких $\gamma \alpha_1 = \beta_1,\ \gamma \alpha_2 = \beta_2$;
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+& y & \\
+& x \arrow[u,red,"\gamma"] & \\
+c_1 \arrow[ruu,bend left = 45, "\beta_1"] \arrow[ru,"\alpha_1"] & & c_2 \arrow[lu,swap,"\alpha_2"] \arrow[luu,bend right = 45, swap, "\beta_2"]
+\end{tikzcd}
+\end{figure}
+\noindent композицією морфізмів буде композиція, як в категорії $C$.\\
+\textbf{Кообутком} сім'ї $\{c_1,c_2\}$ називають ініціальний об'єкт категорії $\textbf{D}_{\text{copr}}$.
 \end{definition}
 
+\noindent Позначимо ініціальний об'єкт за $(q,\{\imath_1,\imath_2\})$. Тоді за означенням ініціальності, для кожного об'єкта $(x,\{\alpha_1,\alpha_2\})$ існує єдиний морфізм між $(q,\{\imath_1,\imath_2\})$ та $(x,\{\alpha_1,\alpha_2\})$. Тобто це означає, що існує єдиний морфізм $\gamma \colon q \to x$ в категорії $C$, для якого $\gamma \imath_1 = \alpha_1,\ \gamma \imath_2 = \alpha_2$.
+\begin{figure}[H]
+\centering
+\begin{tikzcd}
+& y & \\
+& x \arrow[u,red,"\gamma"] & \\
+c_1 \arrow[ruu,bend left = 45, "\alpha_1"] \arrow[ru,"\imath_1"] & & c_2 \arrow[lu,swap,"\imath_2"] \arrow[luu,bend right = 45, swap, "\alpha_2"]
+\end{tikzcd}
+\end{figure}
+\noindent  Використовується позначення $p = c_1 \sqcup c_2$; морфізми $\imath_1 \colon c_1 \to c_1 \sqcup c_2,\ \imath_2 \colon c_2 \to c_1 \sqcup c_2$ називаються \textbf{морфізмами вкладень}.
+
 \begin{remark}
-Аналогічним чином можна визначити в категорії $C$ \textbf{кодобуток $X_i, i \in I$} (деякої сім'ї об'єктів).\\
-Позначення $X = \displaystyle\coprod_{i \in I} X_i$.
+Аналогічним чином можна визначити в категорії $C$ кодобуток деякої сім'ї об'єктів $\{c_i, i \in I\}$. Позначення: $q = \displaystyle\coprod_{i \in I} c_i$.
 \end{remark}
 
 \begin{example}
-Будемо в категорії $\Set$. Розглянемо сім'ю множин $\{X_i, i \in I\}$ (якусь довільну). Визначимо множину $Q$ ось так: $Q = \displaystyle\bigsqcup_{i} X_i'$, де в цьому випадку $X_i' = \{(x,i) \mid x \in X_i\}$ для всіх $i$. Причому варто зауважити, що $X_i'$ дійсно неперетинні, а також $X_i' \cong X_i$. Визначимо відображення $\imath_i \colon X_i \to Q$ таким чином: $\imath_i(x) = (x,i)$.\\
+Розглянемо категорію $\Set$. Розглянемо сім'ю множин $\{X_i, i \in I\}$ (якусь довільну). Визначимо множину $Q$ ось так: $Q = \displaystyle\bigsqcup_{i} X_i'$, де в цьому випадку $X_i' = \{(x,i) \mid x \in X_i\}$ для всіх $i$. Причому варто зауважити, що $X_i'$ дійсно неперетинні, а також $X_i' \cong X_i$. Визначимо відображення $\imath_i \colon X_i \to Q$ таким чином: $\imath_i(x) = (x,i)$.\\
 Доведемо, що пара $(Q,\{\imath_i\})$ буде утворювати кодобуток сім'ї $\{X_i\}$ (у категоріальному сенсі).
 \end{example}
 
