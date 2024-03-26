@@ -1236,11 +1236,17 @@ $\forall x,y \in C^{\text{op}}: C^{\text{op}}(x,y) = C(y,x)$;\\
 \end{remark}
 
 \begin{theorem}
-Нехай $(C,F)$ -- конкретна категорія. Тоді $(C^{\text{op}},F')$ -- конкретна категорія, де $F' \colon C^{\text{op}} \to \Set$ -- деякий (точний) функтор.
+Нехай $(C,F)$ -- конкретна категорія. Тоді $(C^{\text{op}},F')$ -- конкретна категорія, де $F' \colon C^{\text{op}} \to \Set$ -- деякий (точний) функтор.\\
+\textit{TODO: додати доведення.}
 \end{theorem}
 
-\begin{proof}
-
-\end{proof}
+\begin{definition}
+Функтор $F \colon C \to D$ називається \textbf{ізоморфізмом}, якщо
+\begin{align*}
+\exists G \colon D \to C \text{ -- функтор}: GF = 1_C \qquad FG = 1_D
+\end{align*}
+У цьому випадку категорії $C,D$ називаються \textbf{ізоморфними}.\\
+Позначення: $C \cong D$.
+\end{definition}
 
 \end{document}
