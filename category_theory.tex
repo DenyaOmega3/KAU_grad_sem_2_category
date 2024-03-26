@@ -1184,4 +1184,15 @@ $\displaystyle F(\alpha) = F\left( \prod \alpha_i \right) = \prod F(\alpha_i) = 
 Нехай $\alpha \colon x \to y$ -- морфізм категорії $C$ та припустимо, що $F(\alpha) \colon F(x) \to F(y)$ -- розщеплений мономорфізм. Тоді існує морфізм $\beta' \colon F(y) \to F(x)$, для якого $\beta' F(\alpha) = 1_{F(x)}$. Оскільки функтор повний, то для морфізма $\beta'$ існує морфізм $\beta \colon y \to x$, для якого $\beta' = F(\beta)$. Отже, $F(\beta \alpha) = F(\beta) F(\alpha) = \beta' F(\alpha) = 1_{F(x)} = F(1_x)$. Внаслідок точності отримаємо $\beta \alpha = 1_x \implies \alpha$ -- розщеплений мономорфізм.\\
 Аналогічно доводиться відбиття розщепленого епіморфізма. Внаслідок цього буде відбиття ізоморфізма.
 \end{proof}
+
+\begin{definition}
+Функтор $F \colon C \to D$ називається \textbf{істотно сюр'єктивним}, якщо
+\begin{align*}
+\forall d \in \Ob D: \exists x \in \Ob C: d \cong F(x)
+\end{align*}
+\end{definition}
+
+\begin{theorem}
+Кожний точний, повний та істотно сюр'єктивний функтор зберігає мономорфізми, епіморфізми, біморфізми.
+\end{theorem}
 \end{document}
