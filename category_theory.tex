@@ -1122,4 +1122,26 @@ $\alpha \colon x \to y \mapsto \text{Const}_d(\alpha) = 1_d$.
 Ще приклади забуваючих функторів $\Rng \to \Ab$ (забуваємо за множення); $\Met \to \Top$ (забуваємо за метрику) тощо.
 \end{example}
 
+\noindent За допомогою функторів ми можемо строго визначити таке поняття як конкретна категорія.
+
+\begin{definition}
+\textbf{Конкретною категорією} називають пару $(C,F)$, де $C$ -- категорія та $F \colon C \to \Set$ -- вільний функтор.
+\end{definition}
+
+\begin{definition}
+Задано $F \colon C \to D$ -- функтор.\\
+Кажуть, що $F$ \textbf{зберігає ізоморфність}, якщо
+\begin{align*}
+\text{$\alpha \colon x \to y$ -- ізоморфізм $C \implies F(\alpha) \colon F(x) \to F(y)$ -- ізоморфізм $D$.}
+\end{align*}
+Кажуть, що $F$ \textbf{відбиває ізоморфізм}, якщо
+\begin{align*}
+\text{$F(\alpha) \colon F(x) \to F(y)$ -- ізоморфізм в $D \implies \alpha \colon x \to y$ -- ізоморфізм в $C$.}
+\end{align*}
+\end{definition}
+
+\begin{remark}
+Позначимо якусь властивість за літеру $P$. У нашому означенні вище властивість $P = \text{ізоморфізм}$.\\
+Це я до того, що ми можемо узагальнити означення про те, що таке 'зберігає властивість $P$' або 'відбиває властивість $P$'.
+\end{remark}
 \end{document}
