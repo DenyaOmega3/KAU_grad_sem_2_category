@@ -1195,4 +1195,22 @@ $\displaystyle F(\alpha) = F\left( \prod \alpha_i \right) = \prod F(\alpha_i) = 
 \begin{theorem}
 Кожний точний, повний та істотно сюр'єктивний функтор зберігає мономорфізми, епіморфізми, біморфізми.
 \end{theorem}
+
+\begin{proof}
+Нехай $F \colon C \to D$ -- функтор, який точний, повний та істотно сюр'єктивний.\\
+Нехай $\alpha \colon a \to b$ -- мономорфізм в $C$. Ми хочемо довести, що $F(\alpha) \colon F(a) \to F(b)$ -- мономорфізм.\\
+Нехай $\mu_1,\mu_2 \colon y \to F(\alpha)$ -- два морфізми в $D$ та припустимо, що $F(\alpha) \mu_1 = F(\alpha) \mu_2$. Оскільки $F$ істотно сюр'єктивний, то існує ізоморфізм $\beta \colon F(x) \to y$  для деякого $x \in C$. Оскільки $F$ -- повний, то існують морфізми $\lambda_1,\lambda_2 \colon x \to a$, для яких $F(\lambda_i) = \mu_i \beta, i =1,2$.\\
+Далі $F(\alpha \lambda_i) = F(\alpha) F(\lambda_i) = F(\alpha) \mu_i \beta$, тому звідси $F(\alpha \lambda_1) = F(\alpha) \mu_1 \beta = F(\alpha) \mu_2 \beta = F(\alpha \lambda_2)$. Оскільки $F$ точний, то $\alpha \lambda_1 = \alpha \lambda_2$, що дає $\lambda_1 = \lambda_2$ в силу монічності $\alpha$. Внаслідок цього $\mu_1 \beta = F(\lambda_1) = F(\lambda_2) = \mu_2 \beta$. Оскільки $\beta$ -- ізоморфізм, то він епіморфізм, тому $\mu_1 = \mu_2$. Отже, $F(\alpha)$ -- дійсно мономорфізм.\\
+Аналогічно доводиться, що $F$ зберігає епіморфізм, внаслідок чого біморфізм.
+\end{proof}
+
+\begin{theorem}
+Кожний точний функтор відбиває мономорфізм, епіморфізм, біморфізм.
+\end{theorem}
+
+\begin{proof}
+Нехай $F \colon C \to D$ тепер просто точний функтор.\\
+Нехай $\alpha \colon a \to b$ -- морфізм в $C$, так, що $F(\alpha) \colon F(a) \to F(b)$ -- мономорфізм. Оберемо такі $\lambda_1,\lambda_2 \colon x \to a$, щоб $\alpha \lambda_1 = \alpha \lambda_2$. Тоді звідси $F(\alpha)F(\lambda_1) = F(\alpha \lambda_1) = F(\alpha \lambda_2) = F(\alpha) F(\lambda_2)$, тому за монічністю $F(\lambda_1) = F(\lambda_2)$, а за точністю $\lambda_1 = \lambda_2$.\\
+Аналогічно доводиться, що $F$ відбиває епіморфізм, внаслідок чого біморфізм.
+\end{proof}
 \end{document}
