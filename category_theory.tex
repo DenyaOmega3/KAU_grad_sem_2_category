@@ -1100,7 +1100,7 @@ b_1 \arrow[rrd, bend right = 20, "\alpha_1"] \arrow[r,"\tau_1"] & q \arrow[dr,re
 
 \begin{definition}
 Заданий $F \colon C \to D$ -- функтор. Для будь-яких двох об'єктів $x,y$ категорії $C$ функтор $F$ звужується до функції $C(x,y) \to D(F(x),F(y))$.\\
-Функтор $F$ називається \textbf{вільною (faithful)}, якщо ця звужена функція -- ін'єктивна для всіх об'єктів $x,y$ категорії $C$.\\
+Функтор $F$ називається \textbf{точною (faithful)}, якщо ця звужена функція -- ін'єктивна для всіх об'єктів $x,y$ категорії $C$.\\
 Функтор $F$ називається \textbf{повним (full)}, якщо звужена функція -- сюр'єктивна для всіх об'єктів $x,y$ категорії $C$.
 \end{definition}
 
@@ -1125,7 +1125,7 @@ $\alpha \colon x \to y \mapsto \text{Const}_d(\alpha) = 1_d$.
 \noindent За допомогою функторів ми можемо строго визначити таке поняття як конкретна категорія.
 
 \begin{definition}
-\textbf{Конкретною категорією} називають пару $(C,F)$, де $C$ -- категорія та $F \colon C \to \Set$ -- вільний функтор.
+\textbf{Конкретною категорією} називають пару $(C,F)$, де $C$ -- категорія та $F \colon C \to \Set$ -- точний функтор.
 \end{definition}
 
 \begin{definition}
@@ -1156,11 +1156,11 @@ $\displaystyle\prod F(\alpha_i) = F\left( \prod \alpha_i \right) = F(\alpha) = F
 \end{proof}
 
 \begin{theorem}
-Кожний вільний функтор відбиває комутативність діаграм.
+Кожний точний функтор відбиває комутативність діаграм.
 \end{theorem}
 
 \begin{proof}
-Нехай $F \colon C \to D$ -- вільний (точний) функтор. Нехай $\displaystyle\prod F(\alpha_i) = \prod F(\beta_i)$. Тоді\\
+Нехай $F \colon C \to D$ -- точний функтор. Нехай $\displaystyle\prod F(\alpha_i) = \prod F(\beta_i)$. Тоді\\
 $\displaystyle F(\alpha) = F\left( \prod \alpha_i \right) = \prod F(\alpha_i) = \prod F(\beta_i) = F\left( \prod \beta_i \right) = F(\beta)$.\\
 У силі точності отримаємо $\alpha = \beta$.
 \end{proof}
