@@ -1222,7 +1222,25 @@ $\displaystyle F(\alpha) = F\left( \prod \alpha_i \right) = \prod F(\alpha_i) = 
 \text{$F(\beta \alpha) = F(\alpha) F(\beta)$ для всіх морфізмів $\alpha,\beta$, для яких визначений $\beta\alpha$} \\
 \text{$F(1_c) = 1_{F(c)}$ для всіх об'єктів $c$ категорії $C$}
 \end{align*}
-\end{definition}
 Різниця між ко- та контраваріантними функторами полягає в перших двох умовах посередині.\\
 Грубо кажучи, ми при переході в іншу категорію функтором просто міняємо напрямок стрілок в протилежну сторону.
+\end{definition}
+
+\noindent Позначімо $C^{\text{op}}$ за \textbf{протилежну категорію} категорії $C$, де об'єкти ці самі, але стрілки та композиції перевернуті в зворотний бік. Тобто\\
+$C^{\text{op}} = C$;\\
+$\forall x,y \in C^{\text{op}}: C^{\text{op}}(x,y) = C(y,x)$;\\
+для морфізмів $\alpha,\beta$ в $C^{\text{op}}$ композиція $\beta \alpha$ в $C^{\text{op}}$ визначається як композиція $\alpha \beta$ в $C$ (якщо вона визначена).
+
+\begin{remark}
+Таким чином, контраваріантний функтор $F \colon C \to D$ може бути записаний як (коваріантний) функтор $F \colon C^{\text{op}} \to D$ та навпаки.
+\end{remark}
+
+\begin{theorem}
+Нехай $(C,F)$ -- конкретна категорія. Тоді $(C^{\text{op}},F')$ -- конкретна категорія, де $F' \colon C^{\text{op}} \to \Set$ -- деякий (точний) функтор.
+\end{theorem}
+
+\begin{proof}
+
+\end{proof}
+
 \end{document}
