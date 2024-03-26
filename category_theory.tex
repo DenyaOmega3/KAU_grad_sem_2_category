@@ -1213,4 +1213,16 @@ $\displaystyle F(\alpha) = F\left( \prod \alpha_i \right) = \prod F(\alpha_i) = 
 Нехай $\alpha \colon a \to b$ -- морфізм в $C$, так, що $F(\alpha) \colon F(a) \to F(b)$ -- мономорфізм. Оберемо такі $\lambda_1,\lambda_2 \colon x \to a$, щоб $\alpha \lambda_1 = \alpha \lambda_2$. Тоді звідси $F(\alpha)F(\lambda_1) = F(\alpha \lambda_1) = F(\alpha \lambda_2) = F(\alpha) F(\lambda_2)$, тому за монічністю $F(\lambda_1) = F(\lambda_2)$, а за точністю $\lambda_1 = \lambda_2$.\\
 Аналогічно доводиться, що $F$ відбиває епіморфізм, внаслідок чого біморфізм.
 \end{proof}
+
+\begin{definition}
+Задані $C,D$ -- категорії.\\
+\textbf{Контраваріантним функтором} із $C$ в $D$ називають функцію $F \colon C \to D$, яка відображає кожний об'єкт $x$ категорії $C$ на об'єкт $F(x)$ категорії $D$; відображає кожний морфізм $\alpha$ категорії $C$ в морфізм $F(\alpha)$ категорії $D$. Причому справедливе наступне:
+\begin{align*}
+\text{якщо $\alpha \colon x \to y$ морфізм в $C$, то $F(\alpha) \colon F(y) \to F(x)$} \\
+\text{$F(\beta \alpha) = F(\alpha) F(\beta)$ для всіх морфізмів $\alpha,\beta$, для яких визначений $\beta\alpha$} \\
+\text{$F(1_c) = 1_{F(c)}$ для всіх об'єктів $c$ категорії $C$}
+\end{align*}
+\end{definition}
+Різниця між ко- та контраваріантними функторами полягає в перших двох умовах посередині.\\
+Грубо кажучи, ми при переході в іншу категорію функтором просто міняємо напрямок стрілок в протилежну сторону.
 \end{document}
