@@ -1144,4 +1144,24 @@ $\alpha \colon x \to y \mapsto \text{Const}_d(\alpha) = 1_d$.
 Позначимо якусь властивість за літеру $P$. У нашому означенні вище властивість $P = \text{ізоморфізм}$.\\
 Це я до того, що ми можемо узагальнити означення про те, що таке 'зберігає властивість $P$' або 'відбиває властивість $P$'.
 \end{remark}
+
+\begin{theorem}
+Кожний функтор зберігає комутативність діаграм.
+\end{theorem}
+
+\begin{proof}
+Нехай $F \colon C \to D$ -- функтор. Припустимо, що $\alpha_1,\dots,\alpha_n$ та $\beta_1,\dots,\beta_m$ -- морфізми категорії $C$, для яких $\alpha,\beta \colon x \to y$, де $\alpha = \displaystyle\prod \alpha_i$ та $\beta = \displaystyle\prod \beta_i$. Нехай $\alpha = \beta$. Ми взяли якусь частину діаграми, яка комутує. Тоді\\
+$\displaystyle\prod F(\alpha_i) = F\left( \prod \alpha_i \right) = F(\alpha) = F(\beta) = F\left( \prod \beta_i \right) = \prod F(\beta_i)$.\\
+Отже, після переведення функтором комутативність діаграми залишається.
+\end{proof}
+
+\begin{theorem}
+Кожний вільний функтор відбиває комутативність діаграм.
+\end{theorem}
+
+\begin{proof}
+Нехай $F \colon C \to D$ -- вільний (точний) функтор. Нехай $\displaystyle\prod F(\alpha_i) = \prod F(\beta_i)$. Тоді\\
+$\displaystyle F(\alpha) = F\left( \prod \alpha_i \right) = \prod F(\alpha_i) = \prod F(\beta_i) = F\left( \prod \beta_i \right) = F(\beta)$.\\
+У силі точності отримаємо $\alpha = \beta$.
+\end{proof}
 \end{document}
