@@ -1164,4 +1164,24 @@ $\displaystyle\prod F(\alpha_i) = F\left( \prod \alpha_i \right) = F(\alpha) = F
 $\displaystyle F(\alpha) = F\left( \prod \alpha_i \right) = \prod F(\alpha_i) = \prod F(\beta_i) = F\left( \prod \beta_i \right) = F(\beta)$.\\
 У силі точності отримаємо $\alpha = \beta$.
 \end{proof}
+
+\begin{theorem}
+Кожний функтор зберігається розщеплені мономорфізми, розщеплені епіморфізми та ізоморфізми.
+\end{theorem}
+
+\begin{proof}
+Нехай $F \colon C \to D$ -- фунтор. \\
+Нехай $\alpha \colon x \to y$ -- розщеплений мономорфізм в $C$, тобто існує $\beta \colon y \to x$, для якого $\beta \alpha = 1_x$. Тим часом $F(\beta) F(\alpha) = F(\beta \alpha) = F(1_x) = 1_{F(x)}$. Звідси $F(\alpha) \colon F(x) \to F(y)$ -- розщеплений мономорфізм. \\
+Аналогічно доводиться збереження розщепленого епіморфізма. Внаслідок цього буде збереження ізоморфізма.
+\end{proof}
+
+\begin{theorem}
+Кожний точний та повний функтор відбиває розщеплені мономорфізми, розщеплені епіморфізми та ізоморфізми.
+\end{theorem}
+
+\begin{proof}
+Нехай $F \colon C \to D$ -- точний та повний фунтор. \\
+Нехай $\alpha \colon x \to y$ -- морфізм категорії $C$ та припустимо, що $F(\alpha) \colon F(x) \to F(y)$ -- розщеплений мономорфізм. Тоді існує морфізм $\beta' \colon F(y) \to F(x)$, для якого $\beta' F(\alpha) = 1_{F(x)}$. Оскільки функтор повний, то для морфізма $\beta'$ існує морфізм $\beta \colon y \to x$, для якого $\beta' = F(\beta)$. Отже, $F(\beta \alpha) = F(\beta) F(\alpha) = \beta' F(\alpha) = 1_{F(x)} = F(1_x)$. Внаслідок точності отримаємо $\beta \alpha = 1_x \implies \alpha$ -- розщеплений мономорфізм.\\
+Аналогічно доводиться відбиття розщепленого епіморфізма. Внаслідок цього буде відбиття ізоморфізма.
+\end{proof}
 \end{document}
